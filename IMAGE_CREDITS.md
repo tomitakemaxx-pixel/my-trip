@@ -1,50 +1,44 @@
 # 画像クレジット
 
-このしおりは、参加メンバー5人に配る私的な文書です。写真の出所は次の2つです。
+このリポジトリには2つの旅のしおりが入っています。写真と地図の出どころは次のとおりです。
 
-1. **各施設の公式サイト** — らかんの湯・料理・客室・庭園など、施設そのものの写真
-2. **ウィキメディア・コモンズ** — 博多駅・空港・屋台・中洲など、街の風景
+---
 
-## (1) 各施設の公式サイト
+## 三十路会 佐賀・福岡旅行（2027年3月）
 
-施設の設備・料理・客室を正確に伝えるため、各施設が公開している写真を使用しています。
-著作権は各施設に帰属します。私的利用の範囲での掲載であり、再配布はしません。
+参加メンバー5人に配る私的な文書です。
 
-| キー | 提供 | 取得元 |
-|---|---|---|
-| `candeo_spa` | カンデオホテルズ福岡天神 | [https://www.candeohotels.com/ja/assets_c/2020/05/12_tenjin_01_top_01_fv_01_pc-thumb-2560x1600-2803.jpg](https://www.candeohotels.com/ja/assets_c/2020/05/12_tenjin_01_top_01_fv_01_pc-thumb-2560x1600-2803.jpg) |
-| `kisui_lunch` | 博多の海鮮料理 喜水丸 | [https://www.hakata-1bangai.com/data/shops/22/22_2_l.jpg](https://www.hakata-1bangai.com/data/shops/22/22_2_l.jpg) |
-| `kisui_shop` | 博多の海鮮料理 喜水丸 | [https://www.hakata-1bangai.com/data/shops/22/22_3_m.jpg](https://www.hakata-1bangai.com/data/shops/22/22_3_m.jpg) |
-| `mf_breakfast` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine/breakfast/01.jpg](https://www.mifuneyama.co.jp/cuisine/breakfast/01.jpg) |
-| `mf_chaya` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen/chayabar/05.jpg](https://www.mifuneyama.co.jp/rakuen/chayabar/05.jpg) |
-| `mf_chaya2` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen/chayabar/08.jpg](https://www.mifuneyama.co.jp/rakuen/chayabar/08.jpg) |
-| `mf_gaikiyoku` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/08.jpg](https://www.mifuneyama.co.jp/rakan/men/08.jpg) |
-| `mf_kaiseki` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine/diner/01rn.jpg](https://www.mifuneyama.co.jp/cuisine/diner/01rn.jpg) |
-| `mf_maki` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/19.jpg](https://www.mifuneyama.co.jp/rakan/men/19.jpg) |
-| `mf_mizuburo` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/17.jpg](https://www.mifuneyama.co.jp/rakan/men/17.jpg) |
-| `mf_mizuburo_sakura` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/14.jpg](https://www.mifuneyama.co.jp/rakan/men/14.jpg) |
-| `mf_naigosho` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/naigosho/01.jpg](https://www.mifuneyama.co.jp/naigosho/01.jpg) |
-| `mf_naigosho_in` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/naigosho/03.jpg](https://www.mifuneyama.co.jp/naigosho/03.jpg) |
-| `mf_rakuennabe` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine/diner/06.jpg](https://www.mifuneyama.co.jp/cuisine/diner/06.jpg) |
-| `mf_rotenburo` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/01.jpg](https://www.mifuneyama.co.jp/rakan/men/01.jpg) |
-| `mf_sagagyu` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine/diner/04.jpg](https://www.mifuneyama.co.jp/cuisine/diner/04.jpg) |
-| `mf_sakura_day` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen/season/sakura/01.jpg](https://www.mifuneyama.co.jp/rakuen/season/sakura/01.jpg) |
-| `mf_sakura_night` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen/season/sakura/02.jpg](https://www.mifuneyama.co.jp/rakuen/season/sakura/02.jpg) |
-| `mf_sakura_night2` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen/season/sakura/04.jpg](https://www.mifuneyama.co.jp/rakuen/season/sakura/04.jpg) |
-| `mf_sanshou` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine/diner/03n.jpg](https://www.mifuneyama.co.jp/cuisine/diner/03n.jpg) |
-| `mf_sauna` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/03.jpg](https://www.mifuneyama.co.jp/rakan/men/03.jpg) |
-| `mf_steam` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/06.jpg](https://www.mifuneyama.co.jp/rakan/men/06.jpg) |
-| `mf_stove` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/05.jpg](https://www.mifuneyama.co.jp/rakan/men/05.jpg) |
-| `mf_teien_night` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen/chayabar/02.jpg](https://www.mifuneyama.co.jp/rakuen/chayabar/02.jpg) |
-| `mf_yakusou` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/11.jpg](https://www.mifuneyama.co.jp/rakan/men/11.jpg) |
+### 各施設の公式サイト
 
-## (2) ウィキメディア・コモンズ
+| キー | ファイル | 提供 | 取得元 |
+|---|---|---|---|
+| `candeo_spa` | 12_tenjin_01_top_01_fv_01_pc.jpg | カンデオホテルズ福岡天神 | [https://www.candeohotels.com/ja/fukuoka-tenjin/sauna/](https://www.candeohotels.com/ja/fukuoka-tenjin/sauna/) |
+| `kisui_lunch` | data/shops/22/22_2_l.jpg | 博多の海鮮料理 喜水丸 | [https://www.hakata-1bangai.com/floorguide/shop22.html](https://www.hakata-1bangai.com/floorguide/shop22.html) |
+| `kisui_shop` | data/shops/22/22_3_m.jpg | 博多の海鮮料理 喜水丸 | [https://www.hakata-1bangai.com/floorguide/shop22.html](https://www.hakata-1bangai.com/floorguide/shop22.html) |
+| `mf_breakfast` | cuisine/breakfast/01.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine.html](https://www.mifuneyama.co.jp/cuisine.html) |
+| `mf_chaya` | rakuen/chayabar/05.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen.html](https://www.mifuneyama.co.jp/rakuen.html) |
+| `mf_chaya2` | rakuen/chayabar/08.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen.html](https://www.mifuneyama.co.jp/rakuen.html) |
+| `mf_gaikiyoku` | rakan/men/08.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan.html](https://www.mifuneyama.co.jp/rakan.html) |
+| `mf_kaiseki` | cuisine/diner/01rn.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine.html](https://www.mifuneyama.co.jp/cuisine.html) |
+| `mf_maki` | rakan/men/19.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan.html](https://www.mifuneyama.co.jp/rakan.html) |
+| `mf_mizuburo` | rakan/men/17.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan.html](https://www.mifuneyama.co.jp/rakan.html) |
+| `mf_mizuburo_sakura` | rakan/men/14.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan.html](https://www.mifuneyama.co.jp/rakan.html) |
+| `mf_naigosho` | naigosho/01.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/naigosho.html](https://www.mifuneyama.co.jp/naigosho.html) |
+| `mf_naigosho_in` | naigosho/03.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/naigosho.html](https://www.mifuneyama.co.jp/naigosho.html) |
+| `mf_rakuennabe` | cuisine/diner/06.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine.html](https://www.mifuneyama.co.jp/cuisine.html) |
+| `mf_rotenburo` | rakan/men/01.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan.html](https://www.mifuneyama.co.jp/rakan.html) |
+| `mf_sagagyu` | cuisine/diner/04.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine.html](https://www.mifuneyama.co.jp/cuisine.html) |
+| `mf_sakura_day` | rakuen/season/sakura/01.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen.html](https://www.mifuneyama.co.jp/rakuen.html) |
+| `mf_sakura_night` | rakuen/season/sakura/02.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen.html](https://www.mifuneyama.co.jp/rakuen.html) |
+| `mf_sakura_night2` | rakuen/season/sakura/04.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen.html](https://www.mifuneyama.co.jp/rakuen.html) |
+| `mf_sanshou` | cuisine/diner/03n.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine.html](https://www.mifuneyama.co.jp/cuisine.html) |
+| `mf_sauna` | rakan/men/03.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan.html](https://www.mifuneyama.co.jp/rakan.html) |
+| `mf_steam` | rakan/men/06.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan.html](https://www.mifuneyama.co.jp/rakan.html) |
+| `mf_stove` | rakan/men/05.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan.html](https://www.mifuneyama.co.jp/rakan.html) |
+| `mf_teien_night` | rakuen/chayabar/02.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen.html](https://www.mifuneyama.co.jp/rakuen.html) |
+| `mf_yakusou` | rakan/men/11.jpg | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan.html](https://www.mifuneyama.co.jp/rakan.html) |
 
-自由利用可能なライセンスで公開されている画像です。
-
-- `cover_banner.jpg` は `cover_romon.jpg`（Gate of Takeo Hot Spring.jpg）を横長に切り出した二次的著作物で、
-  元画像と同じ CC BY-SA 4.0 が適用されます。
-- `cover_sakura.jpg` / `cover_sakura_night.jpg` は公式サイトの写真を切り出したものです（上記(1)に含む）。
+### ウィキメディア・コモンズ
 
 | キー | ファイル | 撮影者 | ライセンス | 出典 |
 |---|---|---|---|---|
@@ -76,12 +70,75 @@
 | `yozakura` | 夜桜 2017-04 (33178514804).jpg | Thomas Au | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:夜桜_2017-04_(33178514804).jpg) |
 | `yozakura2` | Cherry blossom light up 夜桜 - panoramio.jpg | nanamori | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Cherry_blossom_light_up_夜桜_-_panoramio.jpg) |
 
-ライセンス全文：
+---
 
-- CC BY 2.0 — https://creativecommons.org/licenses/by/2.0/
-- CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/
-- CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
-- CC BY-SA 2.5 — https://creativecommons.org/licenses/by-sa/2.5/
-- CC BY-SA 3.0 — https://creativecommons.org/licenses/by-sa/3.0/
-- CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/
-- CC0 / パブリックドメイン — 権利放棄済み
+## 秩父ファミリー旅行（2026年9月）
+
+髙山家4人のための私的な文書です。
+
+### 各施設の公式サイト
+
+| キー | ファイル | 提供 | 取得元 |
+|---|---|---|---|
+| `cb_km_calendar` | harvest_calendar.jpg | 小松沢レジャー農園 | [https://www.komatsuzawa.co.jp/](https://www.komatsuzawa.co.jp/) |
+| `cb_km_farmmap` | farmmap.jpg | 小松沢レジャー農園 | [https://www.komatsuzawa.co.jp/](https://www.komatsuzawa.co.jp/) |
+| `cb_km_pamphlet` | pamph_autumn.jpg | 小松沢レジャー農園 | [https://www.komatsuzawa.co.jp/](https://www.komatsuzawa.co.jp/) |
+| `cb_mat_bath` | Top_PC_bath.jpg | 西武秩父駅前温泉 祭の湯 | [https://www.seibu-leisure.co.jp/matsuri/](https://www.seibu-leisure.co.jp/matsuri/) |
+| `cb_mat_food` | Top_PC_food.jpg | 西武秩父駅前温泉 祭の湯 | [https://www.seibu-leisure.co.jp/matsuri/](https://www.seibu-leisure.co.jp/matsuri/) |
+| `cb_mat_rotenburo` | matsuri_1.jpg | 西武秩父駅前温泉 祭の湯 | [https://www.seibu-leisure.co.jp/matsuri/](https://www.seibu-leisure.co.jp/matsuri/) |
+| `cb_mat_souvenir` | Top_PC_souvenir.jpg | 西武秩父駅前温泉 祭の湯 | [https://www.seibu-leisure.co.jp/matsuri/](https://www.seibu-leisure.co.jp/matsuri/) |
+| `cb_mp_avenue` | guide01_01.jpg | 秩父ミューズパーク | [https://www.muse-park.com/guide/facility01](https://www.muse-park.com/guide/facility01) |
+| `cb_mp_horse` | guide07_09.jpg | 秩父ミューズパーク | [https://www.muse-park.com/guide/facility07](https://www.muse-park.com/guide/facility07) |
+| `cb_mp_lawn` | guide07n.jpg | 秩父ミューズパーク | [https://www.muse-park.com/guide/facility07](https://www.muse-park.com/guide/facility07) |
+| `cb_mp_map` | mp_map08.jpg | 秩父ミューズパーク | [https://www.muse-park.com/map](https://www.muse-park.com/map) |
+| `cb_mp_play1` | guide07_04n.jpg | 秩父ミューズパーク | [https://www.muse-park.com/guide/facility07](https://www.muse-park.com/guide/facility07) |
+| `cb_mp_play2` | guide07_05n.jpg | 秩父ミューズパーク | [https://www.muse-park.com/guide/facility07](https://www.muse-park.com/guide/facility07) |
+| `cb_mp_play3` | guide07_07n.jpg | 秩父ミューズパーク | [https://www.muse-park.com/guide/facility07](https://www.muse-park.com/guide/facility07) |
+| `cb_mp_swing` | guide07_10.jpg | 秩父ミューズパーク | [https://www.muse-park.com/guide/facility07](https://www.muse-park.com/guide/facility07) |
+| `cb_mp_tower` | guide07_03n.jpg | 秩父ミューズパーク | [https://www.muse-park.com/guide/facility07](https://www.muse-park.com/guide/facility07) |
+| `cb_mp_tower2` | guide07_08n.jpg | 秩父ミューズパーク | [https://www.muse-park.com/guide/facility07](https://www.muse-park.com/guide/facility07) |
+| `cb_mp_train` | guide01.jpg | 秩父ミューズパーク | [https://www.muse-park.com/guide/facility01](https://www.muse-park.com/guide/facility01) |
+| `cb_mp_train2` | guide01_02.jpg | 秩父ミューズパーク | [https://www.muse-park.com/guide/facility01](https://www.muse-park.com/guide/facility01) |
+| `cb_pica_bath` | spa1.jpg | PICA秩父 | [https://www.pica-resort.jp/chichibu/about/spa.html](https://www.pica-resort.jp/chichibu/about/spa.html) |
+| `cb_pica_bbq` | site9.jpg | PICA秩父 | [https://www.pica-resort.jp/chichibu/](https://www.pica-resort.jp/chichibu/) |
+| `cb_pica_blue` | site7.jpg | PICA秩父 | [https://www.pica-resort.jp/chichibu/](https://www.pica-resort.jp/chichibu/) |
+| `cb_pica_cottage` | site2.jpg | PICA秩父 | [https://www.pica-resort.jp/chichibu/](https://www.pica-resort.jp/chichibu/) |
+| `cb_pica_ext` | site5.jpg | PICA秩父 | [https://www.pica-resort.jp/chichibu/](https://www.pica-resort.jp/chichibu/) |
+| `cb_pica_night` | site3.jpg | PICA秩父 | [https://www.pica-resort.jp/chichibu/](https://www.pica-resort.jp/chichibu/) |
+| `cb_pica_night2` | site6.jpg | PICA秩父 | [https://www.pica-resort.jp/chichibu/](https://www.pica-resort.jp/chichibu/) |
+| `cb_pica_sauna` | spa3.jpg | PICA秩父 | [https://www.pica-resort.jp/chichibu/about/spa.html](https://www.pica-resort.jp/chichibu/about/spa.html) |
+| `cb_pica_star` | site_a.jpg | PICA秩父 | [https://www.pica-resort.jp/chichibu/](https://www.pica-resort.jp/chichibu/) |
+
+### ウィキメディア・コモンズ
+
+| キー | ファイル | 撮影者 | ライセンス | 出典 |
+|---|---|---|---|---|
+| `cb_bbq` | BBQ (4684935289).jpg | David Pursehouse from Kawasaki, Japan | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:BBQ_(4684935289).jpg) |
+| `cb_bukozan` | Mount Buko 20140517 - Flickr.jpg | elminium | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Mount_Buko_20140517_-_Flickr.jpg) |
+| `cb_chichibu_sta` | Seibu Railway Seibu-Chichibu Station building.jpg | Mister0124 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Seibu_Railway_Seibu-Chichibu_Station_building.jpg) |
+| `cb_forest` | Mount Bukō (49577224901).jpg | Raita Futo from Tokyo, Japan | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Mount_Bukō_(49577224901).jpg) |
+| `cb_goat` | にこにこ牧場のヤギ.jpg | Kyu3a | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:にこにこ牧場のヤギ.jpg) |
+| `cb_goat_feed` | SAKURAKO - Feed the goat. (7788348568).jpg | MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Feed_the_goat._(7788348568).jpg) |
+| `cb_kabuto` | Kabutomushi-JapaneseBeetle-July2004.jpg | Gombe at Japanese Wikipedia | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Kabutomushi-JapaneseBeetle-July2004.jpg) |
+| `cb_laview_seat` | Seibu railway 001-A-Laview-seat.jpg | Rsa | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Seibu_railway_001-A-Laview-seat.jpg) |
+| `cb_laview_train` | Seibu-001kei-Laview-Train.jpg | Activeman2000 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Seibu-001kei-Laview-Train.jpg) |
+| `cb_laview_yokoze` | Seibu series001 Laview yokoze.jpg | SEMISAYAMASHI | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Seibu_series001_Laview_yokoze.jpg) |
+| `cb_shine` | 田主丸シャインマスカット.jpg | がつこ | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:田主丸シャインマスカット.jpg) |
+| `cb_trout` | Trout.jpg | Jonathunder | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Trout.jpg) |
+| `cb_yokoze_sta` | Seibu Railway Yokoze Station building.jpg | Mister0124 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Seibu_Railway_Yokoze_Station_building.jpg) |
+
+### 地図（自作）
+
+| キー | ファイル | 出典 | ライセンス |
+|---|---|---|---|
+| `map_chichibu` | map_chichibu.jpg | OpenStreetMap contributors | ODbL |
+| `map_wide` | map_wide.jpg | OpenStreetMap contributors | ODbL |
+
+---
+
+## ライセンス
+
+- 施設の公式サイトの写真は、各施設に著作権があります。私的利用の範囲での掲載で、再配布はしません。
+- ウィキメディア・コモンズ分：CC BY 2.0 / 3.0 / 4.0、CC BY-SA 2.5 / 3.0 / 4.0、CC0、パブリックドメイン。
+- 地図は OpenStreetMap のタイルから作成しました。地図データ © OpenStreetMap contributors（ODbL）。
+  https://www.openstreetmap.org/copyright

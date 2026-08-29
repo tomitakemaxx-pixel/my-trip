@@ -1,81 +1,101 @@
-# 三十路会 佐賀・福岡旅行しおり
+# 旅のしおり
 
-2027年3月20日(土)〜22日(月・振休)、2泊3日の旅のしおり一式です。
-引き継ぎ資料（`Ⅰ〜Ⅹ`）の仕様に沿って、**Word / PDF / Web** の3形態を同じ原稿から生成しています。
+2つの旅のしおりを、同じ仕組みで **Word / PDF / Web** の3形態に組んでいます。
 
-作成：高山
+| 旅 | 日程 | 人数 |
+|---|---|---|
+| 三十路会 佐賀・福岡旅行 | 2027年3月20日(土)〜22日(月・振休) 2泊3日 | 友人5人 |
+| 秩父ファミリー旅行 | 2026年9月21日(月・敬老の日)〜22日(火・国民の休日) 1泊2日 | 髙山家4人 |
 
 ## 成果物
 
-| ファイル | 用途 |
-|---|---|
-| `dist/三十路会_佐賀福岡旅行しおり_ver01.docx` | 編集用。A4縦・26ページ・Yu Gothic・文書プロパティの作成者は「高山」 |
-| `dist/三十路会_佐賀福岡旅行しおり_ver01.pdf` | LINEグループ配布用 |
-| `dist/shiori-web.html` | 旅行中にスマホで開く用（写真は data URI で内蔵、単一ファイル） |
-
-## 構成
-
 ```
-表紙（御船山楽園の夜桜／三大目玉／2023年との差分）
-Ⅰ. 参加メンバーと集合について   ← 日程より前
-Ⅱ. 日程　(1) 3/20  (2) 3/21  (3) 3/22
-Ⅲ. 予約の分担
-Ⅳ. 見積
-Ⅴ. 持ち物・注意事項
-Ⅵ. 連絡先
-Ⅶ. 現時点で確定していないこと（要確認リスト）
-Ⅷ. 写真について（クレジット）
+dist/三十路会_佐賀福岡旅行しおり_ver01.docx   A4縦26ページ / Yu Gothic / 作成者「高山」
+dist/三十路会_佐賀福岡旅行しおり_ver01.pdf    LINE配布用
+dist/shiori-web.html                          スマホ用（写真内蔵の単一HTML）
+
+dist/秩父ファミリー旅行しおり_ver01.docx      A4縦26ページ / Yu Gothic / 作成者「髙山浩和」
+dist/秩父ファミリー旅行しおり_ver01.pdf       配布用
+dist/chichibu-web.html                        スマホ用（写真・地図内蔵の単一HTML）
 ```
 
-見出しは `Ⅰ / Ⅱ / Ⅲ` → `(1) (2) (3)` → `① ② ③` の階層です。
-Day1（茜）／Day2（藍）／Day3（松）で色を変えています。
+## 仕組み
+
+原稿は `build/content*.js` の1か所にあり、Word版とWeb版の両方がそこから生成されます。
+**文面を直すときは content ファイルだけを編集してください。**両方の版が自動で揃います。
+
+```
+build/
+  content.js              佐賀・福岡の原稿
+  content-chichibu.js     秩父の原稿
+  docx-kit.js             Word組版の共通部品（両方から利用）
+  web-kit.js              Web版の共通部品（両方から利用）
+  build-shiori.js         佐賀・福岡 → docx
+  build-chichibu.js       秩父 → docx
+  build-web.js            佐賀・福岡 → html
+  build-web-chichibu.js   秩父 → html
+  optimize-images.py      assets/img の写真を適正サイズへ（処理済みは .optimised.json で記録）
+  make-web-images.py      Web版用にさらに小さく（build/web-img へ）
+  make-maps.py            OpenStreetMap のタイルから地図を作る
+```
 
 ## ビルド
 
-原稿は `build/content.js` の1か所だけにあり、Word版とWeb版の両方がそこから生成されます。
-**原稿を直すときは `build/content.js` を編集してください。**
-
 ```bash
-npm install                        # docx (npm)
-python3 -m pip install Pillow      # 画像の縮小に使用
+npm install                     # docx (npm)
+pip install Pillow requests     # 画像と地図の生成に使用
 
 # Word版
 node build/build-shiori.js
+node build/build-chichibu.js
 
 # PDF（LibreOffice。日本語グリフのため JP フォントを明示して書き出す）
-SHIORI_FONT="Noto Sans CJK JP" SHIORI_OUT="_pdfsrc.docx" node build/build-shiori.js
-soffice --headless --convert-to pdf --outdir dist dist/_pdfsrc.docx
-mv dist/_pdfsrc.pdf "dist/三十路会_佐賀福岡旅行しおり_ver01.pdf" && rm dist/_pdfsrc.docx
+SHIORI_FONT="Noto Sans CJK JP" SHIORI_OUT="_tmp.docx" node build/build-chichibu.js
+soffice --headless --convert-to pdf --outdir dist dist/_tmp.docx
+mv dist/_tmp.pdf "dist/秩父ファミリー旅行しおり_ver01.pdf" && rm dist/_tmp.docx
 
 # Web版
-python3 build/make-web-images.py && node build/build-web.js
+python3 build/make-web-images.py
+node build/build-web.js
+node build/build-web-chichibu.js
+
+# 地図を作り直すとき
+python3 build/make-maps.py
 ```
 
-`SHIORI_FONT` を指定しない場合は **Yu Gothic** で組まれます（配布する .docx はこちら）。
-PDFを書き出すときだけ JP フォントを指定するのは、LibreOffice が "Yu Gothic" の代替に
-Noto Sans CJK **SC**（簡体字）を選んでしまい、一部の漢字が中国語字形になるためです。
+`SHIORI_FONT` を指定しなければ **Yu Gothic** で組まれます（配布する .docx はこちら）。
+PDFのときだけ JP フォントを指定するのは、LibreOffice が "Yu Gothic" の代替に
+Noto Sans CJK **SC**（簡体字）を選び、一部の漢字が中国語字形になってしまうためです。
 
-## 写真について
+## 写真と地図
 
-出所は2つです。一覧は [`IMAGE_CREDITS.md`](IMAGE_CREDITS.md) を参照してください。
+出どころは3種類です。一覧は [`IMAGE_CREDITS.md`](IMAGE_CREDITS.md) にあります。
 
-1. **各施設の公式サイト**（25点）— らかんの湯の薪サウナ・水風呂・外気浴、佐賀牛のセイロ蒸し、
-   楽園鍋、別邸内庫所、御船山楽園の夜桜、カンデオのスカイスパ、喜水丸の料理など。
-   施設そのものを正確に伝えるため、各施設が公開している写真を使っています。
-   著作権は各施設に帰属し、私的利用の範囲での掲載です（再配布はしません）。
-2. **ウィキメディア・コモンズ**（27点）— 博多駅・福岡空港・成田・787系・屋台・中洲など、
-   街の風景。自由利用可能なライセンスの画像です。
+1. **各施設の公式サイト** — らかんの湯、佐賀牛、御船山楽園の夜桜、小松沢レジャー農園、
+   PICA秩父、秩父ミューズパーク、祭の湯など。施設そのものを正確に伝えるために使っています。
+   著作権は各施設にあり、私的利用の範囲での掲載です（再配布はしません）。
+2. **ウィキメディア・コモンズ** — 駅、街の風景、特急ラビュー、武甲山、食べ物など。
+3. **OpenStreetMap** — 秩父版の地図2枚は `build/make-maps.py` でタイルから生成しています。
+   地図データ © OpenStreetMap contributors（ODbL）。
 
-画像を追加・差し替えたら `python3 build/optimize-images.py` を実行してください。
+画像を足したら `python3 build/optimize-images.py` を実行してください。
 処理済みのキーは `assets/img/.optimised.json` に記録され、二重圧縮されません。
 
-## 確定していないこと
+## 秩父版について：元の計画書からの変更
 
-2027年3月の旅程のため、以下は現時点で確定できません。しおり本文にも（要確認）と明記しています。
+もとの計画書（`chichibu_trip_20260921_22.md`）を各施設の公式サイトで検証したところ、
+16点の相違が見つかりました。全部しおりのⅤ章に表で載せています。主なものは次のとおりです。
 
-- 特急リレーかもめの時刻（2027年3月のダイヤ改正で数分ずれる可能性）
-- 御船山楽園 花まつりの2027年の期間（2026年は3/13-4/5、夜間18:30-22:00）
-- 送迎バスの予約要否、らかんの湯の男女入替時間、各店の祝日営業
-- 博多⇔武雄温泉の運賃
+- **樹音の湯は宿泊者無料**（計画書は1,250円を計上）。タオルも無料貸出
+- **農園の開園は9:45**、お食事処は11:00〜15:00（L.O.14:00）
+- **マスのつかみ取りは10月末まで**（公式パンフレット）→ 9/21は問題なし
+- **営業カレンダー上、9/21・9/22とも営業予定**（ぶどう狩り可・お食事処営業）
+- **樹音の湯に朝風呂 7:30〜9:30 がある**（計画書に記載なし）
+- **祭の湯は幼児（2歳以下）無料**、こどもは3歳〜小学生
+- スカイトレインは素の「火曜日定休」で祝日の例外がなく、9/22は休みと想定すべき
 
-確認が取れ次第、`build/content.js` を更新して版を上げてください。
+あわせて、4歳・2歳連れに合わせて次の組み替えを提案しています。
+
+- 昼も夜もBBQになっていたので、**昼は単品に落とす**
+- おむつの子は湯船に入れないため、**朝風呂で済ませて祭の湯は食事のみ**にする
+- **展望ちびっこ広場をオプションから推奨に格上げ**（この年齢にいちばん刺さる）

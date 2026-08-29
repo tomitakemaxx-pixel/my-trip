@@ -1,12 +1,13 @@
 {
-  "name": "misoji-kai-saga-fukuoka-shiori",
+  "name": "trip-shiori",
   "version": "1.0.0",
-  "description": "三十路会 佐賀・福岡旅行しおり（2027年3月20-22日）のWord/PDF/Web版ビルダー",
+  "description": "旅のしおり（三十路会 佐賀・福岡／秩父ファミリー）のWord・PDF・Web版ビルダー",
   "private": true,
   "scripts": {
-    "build": "node build/build-shiori.js",
-    "build:web": "python3 build/make-web-images.py && node build/build-web.js",
-    "optimize": "python3 build/optimize-images.py"
+    "build": "node build/build-shiori.js && node build/build-chichibu.js",
+    "build:web": "python3 build/make-web-images.py && node build/build-web.js && node build/build-web-chichibu.js",
+    "optimize": "python3 build/optimize-images.py",
+    "maps": "python3 build/make-maps.py"
   },
   "dependencies": {
     "docx": "^9.7.1"

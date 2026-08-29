@@ -447,5 +447,306 @@
   "source": "official",
   "page": "https://www.candeohotels.com/ja/fukuoka-tenjin/sauna/",
   "url": "https://www.candeohotels.com/ja/assets_c/2020/05/12_tenjin_01_top_01_fv_01_pc-thumb-2560x1600-2803.jpg"
+ },
+ "cb_kabuto": {
+  "file": "File:Kabutomushi-JapaneseBeetle-July2004.jpg",
+  "artist": "Gombe at Japanese Wikipedia",
+  "lic": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kabutomushi-JapaneseBeetle-July2004.jpg",
+  "source": "commons"
+ },
+ "cb_bukozan": {
+  "file": "File:Mount Buko 20140517 - Flickr.jpg",
+  "artist": "elminium",
+  "lic": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mount_Buko_20140517_-_Flickr.jpg",
+  "source": "commons"
+ },
+ "cb_goat_feed": {
+  "file": "File:SAKURAKO - Feed the goat. (7788348568).jpg",
+  "artist": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
+  "lic": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Feed_the_goat._(7788348568).jpg",
+  "source": "commons"
+ },
+ "cb_laview_train": {
+  "file": "File:Seibu-001kei-Laview-Train.jpg",
+  "artist": "Activeman2000",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seibu-001kei-Laview-Train.jpg",
+  "source": "commons"
+ },
+ "cb_chichibu_sta": {
+  "file": "File:Seibu Railway Seibu-Chichibu Station building.jpg",
+  "artist": "Mister0124",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seibu_Railway_Seibu-Chichibu_Station_building.jpg",
+  "source": "commons"
+ },
+ "cb_yokoze_sta": {
+  "file": "File:Seibu Railway Yokoze Station building.jpg",
+  "artist": "Mister0124",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seibu_Railway_Yokoze_Station_building.jpg",
+  "source": "commons"
+ },
+ "cb_laview_seat": {
+  "file": "File:Seibu railway 001-A-Laview-seat.jpg",
+  "artist": "Rsa",
+  "lic": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seibu_railway_001-A-Laview-seat.jpg",
+  "source": "commons"
+ },
+ "cb_laview_yokoze": {
+  "file": "File:Seibu series001 Laview yokoze.jpg",
+  "artist": "SEMISAYAMASHI",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seibu_series001_Laview_yokoze.jpg",
+  "source": "commons"
+ },
+ "cb_trout": {
+  "file": "File:Trout.jpg",
+  "artist": "Jonathunder",
+  "lic": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Trout.jpg",
+  "source": "commons"
+ },
+ "cb_goat": {
+  "file": "File:にこにこ牧場のヤギ.jpg",
+  "artist": "Kyu3a",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:にこにこ牧場のヤギ.jpg",
+  "source": "commons"
+ },
+ "cb_shine": {
+  "file": "File:田主丸シャインマスカット.jpg",
+  "artist": "がつこ",
+  "lic": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:田主丸シャインマスカット.jpg",
+  "source": "commons"
+ },
+ "cb_bbq": {
+  "file": "File:BBQ (4684935289).jpg",
+  "artist": "David Pursehouse from Kawasaki, Japan",
+  "lic": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:BBQ_(4684935289).jpg",
+  "source": "commons"
+ },
+ "cb_km_pamphlet": {
+  "file": "pamph_autumn.jpg",
+  "artist": "小松沢レジャー農園",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.komatsuzawa.co.jp/"
+ },
+ "cb_km_farmmap": {
+  "file": "farmmap.jpg",
+  "artist": "小松沢レジャー農園",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.komatsuzawa.co.jp/"
+ },
+ "cb_km_calendar": {
+  "file": "harvest_calendar.jpg",
+  "artist": "小松沢レジャー農園",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.komatsuzawa.co.jp/"
+ },
+ "cb_pica_cottage": {
+  "file": "site2.jpg",
+  "artist": "PICA秩父",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.pica-resort.jp/chichibu/"
+ },
+ "cb_pica_ext": {
+  "file": "site5.jpg",
+  "artist": "PICA秩父",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.pica-resort.jp/chichibu/"
+ },
+ "cb_pica_blue": {
+  "file": "site7.jpg",
+  "artist": "PICA秩父",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.pica-resort.jp/chichibu/"
+ },
+ "cb_pica_night": {
+  "file": "site3.jpg",
+  "artist": "PICA秩父",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.pica-resort.jp/chichibu/"
+ },
+ "cb_pica_night2": {
+  "file": "site6.jpg",
+  "artist": "PICA秩父",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.pica-resort.jp/chichibu/"
+ },
+ "cb_pica_star": {
+  "file": "site_a.jpg",
+  "artist": "PICA秩父",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.pica-resort.jp/chichibu/"
+ },
+ "cb_pica_bbq": {
+  "file": "site9.jpg",
+  "artist": "PICA秩父",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.pica-resort.jp/chichibu/"
+ },
+ "cb_pica_bath": {
+  "file": "spa1.jpg",
+  "artist": "PICA秩父",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.pica-resort.jp/chichibu/about/spa.html"
+ },
+ "cb_pica_sauna": {
+  "file": "spa3.jpg",
+  "artist": "PICA秩父",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.pica-resort.jp/chichibu/about/spa.html"
+ },
+ "cb_mp_map": {
+  "file": "mp_map08.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/map"
+ },
+ "cb_mp_tower": {
+  "file": "guide07_03n.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility07"
+ },
+ "cb_mp_tower2": {
+  "file": "guide07_08n.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility07"
+ },
+ "cb_mp_play1": {
+  "file": "guide07_04n.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility07"
+ },
+ "cb_mp_play2": {
+  "file": "guide07_05n.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility07"
+ },
+ "cb_mp_play3": {
+  "file": "guide07_07n.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility07"
+ },
+ "cb_mp_horse": {
+  "file": "guide07_09.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility07"
+ },
+ "cb_mp_swing": {
+  "file": "guide07_10.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility07"
+ },
+ "cb_mp_lawn": {
+  "file": "guide07n.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility07"
+ },
+ "cb_mp_train": {
+  "file": "guide01.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility01"
+ },
+ "cb_mp_train2": {
+  "file": "guide01_02.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility01"
+ },
+ "cb_mp_avenue": {
+  "file": "guide01_01.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility01"
+ },
+ "cb_mat_rotenburo": {
+  "file": "matsuri_1.jpg",
+  "artist": "西武秩父駅前温泉 祭の湯",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.seibu-leisure.co.jp/matsuri/"
+ },
+ "cb_mat_bath": {
+  "file": "Top_PC_bath.jpg",
+  "artist": "西武秩父駅前温泉 祭の湯",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.seibu-leisure.co.jp/matsuri/"
+ },
+ "cb_mat_food": {
+  "file": "Top_PC_food.jpg",
+  "artist": "西武秩父駅前温泉 祭の湯",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.seibu-leisure.co.jp/matsuri/"
+ },
+ "cb_mat_souvenir": {
+  "file": "Top_PC_souvenir.jpg",
+  "artist": "西武秩父駅前温泉 祭の湯",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.seibu-leisure.co.jp/matsuri/"
+ },
+ "map_wide": {
+  "file": "map_wide.jpg",
+  "artist": "OpenStreetMap contributors",
+  "lic": "ODbL（地図データ）",
+  "source": "osm",
+  "page": "https://www.openstreetmap.org/copyright"
+ },
+ "map_chichibu": {
+  "file": "map_chichibu.jpg",
+  "artist": "OpenStreetMap contributors",
+  "lic": "ODbL（地図データ）",
+  "source": "osm",
+  "page": "https://www.openstreetmap.org/copyright"
+ },
+ "cb_forest": {
+  "file": "File:Mount Bukō (49577224901).jpg",
+  "artist": "Raita Futo from Tokyo, Japan",
+  "lic": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mount_Bukō_(49577224901).jpg",
+  "source": "commons"
  }
 }

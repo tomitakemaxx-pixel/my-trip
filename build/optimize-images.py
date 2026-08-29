@@ -5,7 +5,9 @@ from PIL import Image, ImageOps
 import os, json, sys
 
 IMG = os.path.join(os.path.dirname(__file__), '..', 'assets', 'img')
-MAXW = {'cover_romon': 2000, 'mf_sakura_day': 2000, 'mf_sakura_night': 2000}
+MAXW = {'cover_romon': 2000, 'mf_sakura_day': 2000, 'mf_sakura_night': 2000,
+        'cb_bukozan': 2000, 'cb_km_pamphlet': 1200, 'cb_km_farmmap': 1400,
+        'cb_km_calendar': 1400, 'cb_mp_map': 2200, 'map_wide': 1600, 'map_chichibu': 1400}
 DEFAULT_MAX = 1300
 QUALITY = 82
 DONE = os.path.join(IMG, '.optimised.json')   # 二重圧縮を避けるための処理済み記録
@@ -47,6 +49,7 @@ def banner():
     crop_banner('cover_romon', 'cover_banner', top_frac=0.30)
     crop_banner('mf_sakura_day', 'cover_sakura', top_frac=0.22)
     crop_banner('mf_sakura_night', 'cover_sakura_night', top_frac=0.10)
+    crop_banner('cb_bukozan', 'cb_cover', ratio=2.45, top_frac=0.26)
 
 if __name__ == '__main__':
     optimise()
