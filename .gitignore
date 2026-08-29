@@ -1,0 +1,4 @@
+node_modules/
+build/web-img/
+dist/_pdfsrc.*
+.DS_Store
