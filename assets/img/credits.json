@@ -7,7 +7,8 @@
   "page": "https://commons.wikimedia.org/wiki/File:Azalea_Valley_in_Mifuneyama_Garden_and_Mount_Mifuneyama_3.jpg",
   "bytes": 3131450,
   "w": 2000,
-  "h": 1500
+  "h": 1500,
+  "source": "commons"
  },
  "mifune_gate": {
   "file": "File:Gate of Mifuneyama-rakuen.jpg",
@@ -17,7 +18,8 @@
   "page": "https://commons.wikimedia.org/wiki/File:Gate_of_Mifuneyama-rakuen.jpg",
   "bytes": 689536,
   "w": 2000,
-  "h": 1500
+  "h": 1500,
+  "source": "commons"
  },
  "cover_romon": {
   "file": "File:Gate of Takeo Hot Spring.jpg",
@@ -27,7 +29,8 @@
   "page": "https://commons.wikimedia.org/wiki/File:Gate_of_Takeo_Hot_Spring.jpg",
   "bytes": 1475092,
   "w": 2000,
-  "h": 1500
+  "h": 1500,
+  "source": "commons"
  },
  "romon2": {
   "file": "File:Gate of Takeo Hot Spring and Mount Sakurayama.jpg",
@@ -35,7 +38,8 @@
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Gate_of_Takeo_Hot_Spring_and_Mount_Sakurayama.jpg",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "udon": {
   "file": "File:Gobo-ten Udon Kyushu.JPG",
@@ -43,7 +47,8 @@
   "lic": "CC BY-SA 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Gobo-ten_Udon_Kyushu.JPG",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "hakata_station": {
   "file": "File:Hakata Station 20180306.jpg",
@@ -51,7 +56,8 @@
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Hakata_Station_20180306.jpg",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "ramen2": {
   "file": "File:Hakata ramen bowl closeup.jpg",
@@ -59,7 +65,8 @@
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Hakata_ramen_bowl_closeup.jpg",
   "w": 1800,
-  "h": 2400
+  "h": 2400,
+  "source": "commons"
  },
  "sauna_wood": {
   "file": "File:Interior of a smoke sauna, Uusikaupunki, Finland - 20030510.jpg",
@@ -67,7 +74,8 @@
   "lic": "CC BY-SA 2.5",
   "page": "https://commons.wikimedia.org/wiki/File:Interior_of_a_smoke_sauna,_Uusikaupunki,_Finland_-_20030510.jpg",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "mifune_garden": {
   "file": "File:Mifuneyama-rakuen 01.jpg",
@@ -75,7 +83,8 @@
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Mifuneyama-rakuen_01.jpg",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "motsunabe2": {
   "file": "File:Motsunabe 002.jpg",
@@ -83,7 +92,8 @@
   "lic": "CC BY-SA 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Motsunabe_002.jpg",
   "w": 1800,
-  "h": 1297
+  "h": 1297,
+  "source": "commons"
  },
  "nakasu_night": {
   "file": "File:Nakasu (20141188736).jpg",
@@ -91,7 +101,8 @@
   "lic": "CC BY 2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Nakasu_(20141188736).jpg",
   "w": 1800,
-  "h": 1200
+  "h": 1200,
+  "source": "commons"
  },
  "yatai": {
   "file": "File:Nakasu Yatai Stalls (19979437930).jpg",
@@ -99,7 +110,8 @@
   "lic": "CC BY 2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Nakasu_Yatai_Stalls_(19979437930).jpg",
   "w": 1800,
-  "h": 1200
+  "h": 1200,
+  "source": "commons"
  },
  "sagabeef": {
   "file": "File:Saga beef.jpg",
@@ -107,7 +119,8 @@
   "lic": "CC BY 2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Saga_beef.jpg",
   "w": 1024,
-  "h": 679
+  "h": 679,
+  "source": "commons"
  },
  "kamome787": {
   "file": "File:Series787-BM6 Relay-Kamome-12.jpg",
@@ -115,7 +128,8 @@
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Series787-BM6_Relay-Kamome-12.jpg",
   "w": 1800,
-  "h": 1200
+  "h": 1200,
+  "source": "commons"
  },
  "takeo_station": {
   "file": "File:Takeo-Onsen Station 20170429-1.jpg",
@@ -123,7 +137,8 @@
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Takeo-Onsen_Station_20170429-1.jpg",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "ramen": {
   "file": "File:ラーメン（博多一双）.jpg",
@@ -131,7 +146,8 @@
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:ラーメン（博多一双）.jpg",
   "w": 1800,
-  "h": 1013
+  "h": 1013,
+  "source": "commons"
  },
  "motsunabe": {
   "file": "File:蟻月 もつ鍋.jpg",
@@ -139,7 +155,8 @@
   "lic": "CC0",
   "page": "https://commons.wikimedia.org/wiki/File:蟻月_もつ鍋.jpg",
   "w": 1800,
-  "h": 1355
+  "h": 1355,
+  "source": "commons"
  },
  "sushi": {
   "file": "File:Conveyor belt sushi at Mashiro Sushi.jpg",
@@ -147,7 +164,8 @@
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Conveyor_belt_sushi_at_Mashiro_Sushi.jpg",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "fukuoka_air": {
   "file": "File:Fukuoka Airport Domestic Terminal.jpg",
@@ -155,7 +173,8 @@
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Fukuoka_Airport_Domestic_Terminal.jpg",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "narita_t3": {
   "file": "File:Narita Airport Terminal 3 - March 31 2019 - various.jpeg",
@@ -163,7 +182,8 @@
   "lic": "CC BY 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Narita_Airport_Terminal_3_-_March_31_2019_-_various.jpeg",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "fishmarket": {
   "file": "File:Fukuoka City Fish Market Center 11-3 Nagahama-3-chōme Chūō-ku Fukuoka City 20221004.jpg",
@@ -171,7 +191,8 @@
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Fukuoka_City_Fish_Market_Center_11-3_Nagahama-3-chōme_Chūō-ku_Fukuoka_City_20221004.jpg",
   "w": 1800,
-  "h": 900
+  "h": 900,
+  "source": "commons"
  },
  "tenjin_night": {
   "file": "File:Night view of Kego Park and Nishitetsu-Fukuoka (Tenjin) Station.JPG",
@@ -179,7 +200,8 @@
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Night_view_of_Kego_Park_and_Nishitetsu-Fukuoka_(Tenjin)_Station.JPG",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "sauna_stove": {
   "file": "File:Smoke sauna stove Utsjoki.JPG",
@@ -187,7 +209,8 @@
   "lic": "CC BY-SA 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Smoke_sauna_stove_Utsjoki.JPG",
   "w": 1800,
-  "h": 1200
+  "h": 1200,
+  "source": "commons"
  },
  "yozakura2": {
   "file": "File:Cherry blossom light up 夜桜 - panoramio.jpg",
@@ -195,7 +218,8 @@
   "lic": "CC BY 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Cherry_blossom_light_up_夜桜_-_panoramio.jpg",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "fishmarket2": {
   "file": "File:Fukuoka City Central Fish Market.jpg",
@@ -203,7 +227,8 @@
   "lic": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Fukuoka_City_Central_Fish_Market.jpg",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "rotenburo": {
   "file": "File:Takanoyu Onsen Rotenburo 086.jpg",
@@ -211,7 +236,8 @@
   "lic": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Takanoyu_Onsen_Rotenburo_086.jpg",
   "w": 1800,
-  "h": 1350
+  "h": 1350,
+  "source": "commons"
  },
  "yozakura": {
   "file": "File:夜桜 2017-04 (33178514804).jpg",
@@ -219,6 +245,207 @@
   "lic": "CC BY 2.0",
   "page": "https://commons.wikimedia.org/wiki/File:夜桜_2017-04_(33178514804).jpg",
   "w": 1800,
-  "h": 1201
+  "h": 1201,
+  "source": "commons"
+ },
+ "mf_sakura_day": {
+  "file": "rakuen/season/sakura/01.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakuen.html",
+  "url": "https://www.mifuneyama.co.jp/rakuen/season/sakura/01.jpg"
+ },
+ "mf_sakura_night": {
+  "file": "rakuen/season/sakura/02.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakuen.html",
+  "url": "https://www.mifuneyama.co.jp/rakuen/season/sakura/02.jpg"
+ },
+ "mf_sakura_night2": {
+  "file": "rakuen/season/sakura/04.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakuen.html",
+  "url": "https://www.mifuneyama.co.jp/rakuen/season/sakura/04.jpg"
+ },
+ "mf_naigosho": {
+  "file": "naigosho/01.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/naigosho.html",
+  "url": "https://www.mifuneyama.co.jp/naigosho/01.jpg"
+ },
+ "mf_naigosho_in": {
+  "file": "naigosho/03.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/naigosho.html",
+  "url": "https://www.mifuneyama.co.jp/naigosho/03.jpg"
+ },
+ "mf_sauna": {
+  "file": "rakan/men/03.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakan.html",
+  "url": "https://www.mifuneyama.co.jp/rakan/men/03.jpg"
+ },
+ "mf_maki": {
+  "file": "rakan/men/19.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakan.html",
+  "url": "https://www.mifuneyama.co.jp/rakan/men/19.jpg"
+ },
+ "mf_stove": {
+  "file": "rakan/men/05.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakan.html",
+  "url": "https://www.mifuneyama.co.jp/rakan/men/05.jpg"
+ },
+ "mf_steam": {
+  "file": "rakan/men/06.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakan.html",
+  "url": "https://www.mifuneyama.co.jp/rakan/men/06.jpg"
+ },
+ "mf_mizuburo_sakura": {
+  "file": "rakan/men/14.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakan.html",
+  "url": "https://www.mifuneyama.co.jp/rakan/men/14.jpg"
+ },
+ "mf_rotenburo": {
+  "file": "rakan/men/01.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakan.html",
+  "url": "https://www.mifuneyama.co.jp/rakan/men/01.jpg"
+ },
+ "mf_mizuburo": {
+  "file": "rakan/men/17.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakan.html",
+  "url": "https://www.mifuneyama.co.jp/rakan/men/17.jpg"
+ },
+ "mf_yakusou": {
+  "file": "rakan/men/11.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakan.html",
+  "url": "https://www.mifuneyama.co.jp/rakan/men/11.jpg"
+ },
+ "mf_gaikiyoku": {
+  "file": "rakan/men/08.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakan.html",
+  "url": "https://www.mifuneyama.co.jp/rakan/men/08.jpg"
+ },
+ "mf_sagagyu": {
+  "file": "cuisine/diner/04.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/cuisine.html",
+  "url": "https://www.mifuneyama.co.jp/cuisine/diner/04.jpg"
+ },
+ "mf_kaiseki": {
+  "file": "cuisine/diner/01rn.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/cuisine.html",
+  "url": "https://www.mifuneyama.co.jp/cuisine/diner/01rn.jpg"
+ },
+ "mf_rakuennabe": {
+  "file": "cuisine/diner/06.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/cuisine.html",
+  "url": "https://www.mifuneyama.co.jp/cuisine/diner/06.jpg"
+ },
+ "mf_sanshou": {
+  "file": "cuisine/diner/03n.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/cuisine.html",
+  "url": "https://www.mifuneyama.co.jp/cuisine/diner/03n.jpg"
+ },
+ "mf_breakfast": {
+  "file": "cuisine/breakfast/01.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/cuisine.html",
+  "url": "https://www.mifuneyama.co.jp/cuisine/breakfast/01.jpg"
+ },
+ "mf_chaya": {
+  "file": "rakuen/chayabar/05.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakuen.html",
+  "url": "https://www.mifuneyama.co.jp/rakuen/chayabar/05.jpg"
+ },
+ "mf_chaya2": {
+  "file": "rakuen/chayabar/08.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakuen.html",
+  "url": "https://www.mifuneyama.co.jp/rakuen/chayabar/08.jpg"
+ },
+ "mf_teien_night": {
+  "file": "rakuen/chayabar/02.jpg",
+  "artist": "御船山楽園ホテル",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.mifuneyama.co.jp/rakuen.html",
+  "url": "https://www.mifuneyama.co.jp/rakuen/chayabar/02.jpg"
+ },
+ "kisui_lunch": {
+  "file": "data/shops/22/22_2_l.jpg",
+  "artist": "博多の海鮮料理 喜水丸",
+  "lic": "公式・店舗紹介",
+  "source": "official",
+  "page": "https://www.hakata-1bangai.com/floorguide/shop22.html",
+  "url": "https://www.hakata-1bangai.com/data/shops/22/22_2_l.jpg"
+ },
+ "kisui_shop": {
+  "file": "data/shops/22/22_3_m.jpg",
+  "artist": "博多の海鮮料理 喜水丸",
+  "lic": "公式・店舗紹介",
+  "source": "official",
+  "page": "https://www.hakata-1bangai.com/floorguide/shop22.html",
+  "url": "https://www.hakata-1bangai.com/data/shops/22/22_3_m.jpg"
+ },
+ "candeo_spa": {
+  "file": "12_tenjin_01_top_01_fv_01_pc.jpg",
+  "artist": "カンデオホテルズ福岡天神",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.candeohotels.com/ja/fukuoka-tenjin/sauna/",
+  "url": "https://www.candeohotels.com/ja/assets_c/2020/05/12_tenjin_01_top_01_fv_01_pc-thumb-2560x1600-2803.jpg"
  }
 }

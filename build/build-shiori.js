@@ -176,6 +176,7 @@ function dataTable(head, rows, cols, o = {}) {
   }));
   rows.forEach((r, ri) => {
     rs.push(new TableRow({
+      cantSplit: true,
       children: r.map((v, i) => cell(
         P(String(v), {
           size: 17, color: i === 0 ? C.ink : C.ink2, bold: i === 0 && !o.plainFirst,
@@ -189,6 +190,7 @@ function dataTable(head, rows, cols, o = {}) {
   });
   if (o.total) {
     rs.push(new TableRow({
+      cantSplit: true,
       children: o.total.map((v, i) => cell(
         P(String(v), { size: i === 1 ? 20 : 17, bold: i < 2, color: i === 1 ? color : C.ink, after: 0, line: 250 }),
         { w: cols[i], fill: o.totalFill || C.goldBg, valign: VerticalAlign.CENTER, mt: 90, mb: 90,
@@ -240,6 +242,7 @@ function slotRow(b, pal) {
   })));
 
   return new TableRow({
+    cantSplit: true,
     children: [
       cell(timeKids, { w: TIME_COL, fill: pal.bg, valign: VerticalAlign.TOP, mt: 110, mb: 110, ml: 40, mr: 40,
         borders: { bottom: line(C.white, 8), top: none, left: none, right: none } }),
@@ -251,6 +254,7 @@ function slotRow(b, pal) {
 
 function bannerRow(text, pal) {
   return new TableRow({
+    cantSplit: true,
     children: [cell(
       P(text, { size: 22, bold: true, color: C.white, align: AlignmentType.CENTER, after: 0, line: 260 }),
       { w: CONTENT_DXA, span: 2, fill: pal.main, mt: 140, mb: 140 })],
@@ -269,6 +273,7 @@ function highlightRow(b, pal) {
     size: 18, bold: true, color: pal.main, after: 0, line: 250, fill: C.white,
   }));
   return new TableRow({
+    cantSplit: true,
     children: [
       cell(P(b.time, { size: 24, bold: true, color: pal.main, align: AlignmentType.CENTER, after: 0, line: 250 }),
         { w: TIME_COL, fill: pal.bg2, valign: VerticalAlign.CENTER, ml: 40, mr: 40,
@@ -290,6 +295,7 @@ function freetimeRow(b, pal) {
   });
   kids.push(P(b.foot, { size: 17, color: pal.main, bold: true, after: 0, line: 245 }));
   return new TableRow({
+    cantSplit: true,
     children: [cell(kids, { w: CONTENT_DXA, span: 2, fill: pal.bg, ml: 260, mr: 260, mt: 140, mb: 140 })],
   });
 }
@@ -348,7 +354,7 @@ function dayHeader(n, dateLabel, weekday, title, lead, palKey) {
 // ═══════════════════════════════════════════════════════════
 function cover() {
   const out = [];
-  out.push(...figure('cover_banner', CONTENT_IN, null, { before: 0 }));
+  out.push(...figure('cover_sakura_night', CONTENT_IN, null, { before: 0 }));
   out.push(spacer(40));
 
   out.push(table([new TableRow({
@@ -477,7 +483,7 @@ function chapter2() {
   out.push(...chapter('Ⅱ', '日程'));
 
   out.push(...dayHeader(1, '3月20日', '土', '東京 → 博多 → 武雄温泉',
-    '集合、うどん、特急、そして薪サウナと佐賀牛。今回の山場は初日です。', 'd1'));
+    '集合、博多の海鮮、特急、そして薪サウナと佐賀牛。今回の山場は初日です。', 'd1'));
   out.push(...renderDay(D.DAY1, 'd1'));
   out.push(new Paragraph({ children: [new PageBreak()] }));
 
@@ -597,24 +603,33 @@ function credits() {
     if (b.t === 'imgpair') { used.add(b.a); used.add(b.b); }
   });
   walk(D.DAY1); walk(D.DAY2); walk(D.DAY3);
-  ['cover_romon', 'hakata_station'].forEach((k) => used.add(k));
+  ['cover_romon', 'hakata_station', 'mf_sakura_night'].forEach((k) => used.add(k));
 
   out.push(new Paragraph({ children: [new PageBreak()] }));
   out.push(...chapter('Ⅷ', '写真について'));
-  out.push(P('このしおりの写真は、ウィキメディア・コモンズで公開されている自由利用可能な画像を使用しています。'
-    + '施設内部（らかんの湯の薪サウナ・露天風呂など）の写真は公開されているものがないため、'
-    + '雰囲気の近い別の場所の写真を「イメージ」として掲載しています。実際の設備とは異なります。',
-  { size: 17, color: C.ink2, after: 140, line: 265 }));
+  out.push(P('このしおりは、参加メンバー5人に配る私的な文書です。写真の出所は次の2つです。',
+    { size: 17, color: C.ink2, after: 110, line: 265 }));
+  out.push(bullet('らかんの湯・料理・客室・庭園など、施設の写真は各施設の公式サイトのものです。'));
+  out.push(bullet('博多駅・空港・屋台・中洲など、街の風景はウィキメディア・コモンズの自由利用可能な画像です。'));
+  out.push(spacer(140));
 
-  const rows = [...used].sort().filter((k) => creds[k]).map((k) => {
+  const mk = (list) => list.map((k) => {
     const c = creds[k];
-    const who = (c.artist || '不明').replace(/\s+/g, ' ').slice(0, 46);
-    return [c.file.replace(/^File:/, ''), who, c.lic];
+    return [c.file.replace(/^File:/, ''), (c.artist || '不明').replace(/\s+/g, ' ').slice(0, 46), c.lic];
   });
-  out.push(dataTable(['ファイル', '撮影者', 'ライセンス'], rows, [5100, 2900, 1746],
+  const keys = [...used].filter((k) => creds[k]).sort();
+  const official = keys.filter((k) => creds[k].source === 'official');
+  const commons = keys.filter((k) => creds[k].source !== 'official');
+
+  out.push(P('(1) 各施設の公式サイト', { size: 19, bold: true, color: C.brandMid, after: 80, line: 260 }));
+  out.push(dataTable(['ファイル', '提供', '出所'], mk(official), [4700, 3200, 1846],
+    { color: C.brandMid, plainFirst: true }));
+  out.push(spacer(180));
+  out.push(P('(2) ウィキメディア・コモンズ', { size: 19, bold: true, color: C.brandMid, after: 80, line: 260 }));
+  out.push(dataTable(['ファイル', '撮影者', 'ライセンス'], mk(commons), [4700, 3200, 1846],
     { color: C.brandMid, plainFirst: true }));
   out.push(spacer(120));
-  out.push(P('出典：ウィキメディア・コモンズ（commons.wikimedia.org）　CC BY / CC BY-SA / CC0 / パブリックドメイン',
+  out.push(P('コモンズ分の出典：commons.wikimedia.org　CC BY / CC BY-SA / CC0 / パブリックドメイン',
     { size: 15, color: C.muted, after: 0, line: 245 }));
   return out;
 }

@@ -1,12 +1,50 @@
 # 画像クレジット
 
-このしおりで使用している写真は、すべて **ウィキメディア・コモンズ**（commons.wikimedia.org）で
-自由利用可能なライセンスのもと公開されているものです。
+このしおりは、参加メンバー5人に配る私的な文書です。写真の出所は次の2つです。
 
-- `cover_banner.jpg` は `cover_romon.jpg`（Gate of Takeo Hot Spring.jpg）を横長に切り出した二次的著作物です。
+1. **各施設の公式サイト** — らかんの湯・料理・客室・庭園など、施設そのものの写真
+2. **ウィキメディア・コモンズ** — 博多駅・空港・屋台・中洲など、街の風景
+
+## (1) 各施設の公式サイト
+
+施設の設備・料理・客室を正確に伝えるため、各施設が公開している写真を使用しています。
+著作権は各施設に帰属します。私的利用の範囲での掲載であり、再配布はしません。
+
+| キー | 提供 | 取得元 |
+|---|---|---|
+| `candeo_spa` | カンデオホテルズ福岡天神 | [https://www.candeohotels.com/ja/assets_c/2020/05/12_tenjin_01_top_01_fv_01_pc-thumb-2560x1600-2803.jpg](https://www.candeohotels.com/ja/assets_c/2020/05/12_tenjin_01_top_01_fv_01_pc-thumb-2560x1600-2803.jpg) |
+| `kisui_lunch` | 博多の海鮮料理 喜水丸 | [https://www.hakata-1bangai.com/data/shops/22/22_2_l.jpg](https://www.hakata-1bangai.com/data/shops/22/22_2_l.jpg) |
+| `kisui_shop` | 博多の海鮮料理 喜水丸 | [https://www.hakata-1bangai.com/data/shops/22/22_3_m.jpg](https://www.hakata-1bangai.com/data/shops/22/22_3_m.jpg) |
+| `mf_breakfast` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine/breakfast/01.jpg](https://www.mifuneyama.co.jp/cuisine/breakfast/01.jpg) |
+| `mf_chaya` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen/chayabar/05.jpg](https://www.mifuneyama.co.jp/rakuen/chayabar/05.jpg) |
+| `mf_chaya2` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen/chayabar/08.jpg](https://www.mifuneyama.co.jp/rakuen/chayabar/08.jpg) |
+| `mf_gaikiyoku` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/08.jpg](https://www.mifuneyama.co.jp/rakan/men/08.jpg) |
+| `mf_kaiseki` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine/diner/01rn.jpg](https://www.mifuneyama.co.jp/cuisine/diner/01rn.jpg) |
+| `mf_maki` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/19.jpg](https://www.mifuneyama.co.jp/rakan/men/19.jpg) |
+| `mf_mizuburo` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/17.jpg](https://www.mifuneyama.co.jp/rakan/men/17.jpg) |
+| `mf_mizuburo_sakura` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/14.jpg](https://www.mifuneyama.co.jp/rakan/men/14.jpg) |
+| `mf_naigosho` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/naigosho/01.jpg](https://www.mifuneyama.co.jp/naigosho/01.jpg) |
+| `mf_naigosho_in` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/naigosho/03.jpg](https://www.mifuneyama.co.jp/naigosho/03.jpg) |
+| `mf_rakuennabe` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine/diner/06.jpg](https://www.mifuneyama.co.jp/cuisine/diner/06.jpg) |
+| `mf_rotenburo` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/01.jpg](https://www.mifuneyama.co.jp/rakan/men/01.jpg) |
+| `mf_sagagyu` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine/diner/04.jpg](https://www.mifuneyama.co.jp/cuisine/diner/04.jpg) |
+| `mf_sakura_day` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen/season/sakura/01.jpg](https://www.mifuneyama.co.jp/rakuen/season/sakura/01.jpg) |
+| `mf_sakura_night` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen/season/sakura/02.jpg](https://www.mifuneyama.co.jp/rakuen/season/sakura/02.jpg) |
+| `mf_sakura_night2` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen/season/sakura/04.jpg](https://www.mifuneyama.co.jp/rakuen/season/sakura/04.jpg) |
+| `mf_sanshou` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/cuisine/diner/03n.jpg](https://www.mifuneyama.co.jp/cuisine/diner/03n.jpg) |
+| `mf_sauna` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/03.jpg](https://www.mifuneyama.co.jp/rakan/men/03.jpg) |
+| `mf_steam` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/06.jpg](https://www.mifuneyama.co.jp/rakan/men/06.jpg) |
+| `mf_stove` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/05.jpg](https://www.mifuneyama.co.jp/rakan/men/05.jpg) |
+| `mf_teien_night` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakuen/chayabar/02.jpg](https://www.mifuneyama.co.jp/rakuen/chayabar/02.jpg) |
+| `mf_yakusou` | 御船山楽園ホテル | [https://www.mifuneyama.co.jp/rakan/men/11.jpg](https://www.mifuneyama.co.jp/rakan/men/11.jpg) |
+
+## (2) ウィキメディア・コモンズ
+
+自由利用可能なライセンスで公開されている画像です。
+
+- `cover_banner.jpg` は `cover_romon.jpg`（Gate of Takeo Hot Spring.jpg）を横長に切り出した二次的著作物で、
   元画像と同じ CC BY-SA 4.0 が適用されます。
-- 施設内部（らかんの湯の薪サウナ・露天風呂など）は公開写真がないため、雰囲気の近い別の場所の写真を
-  「イメージ」として掲載しています。しおり本文にもその旨を明記しています。
+- `cover_sakura.jpg` / `cover_sakura_night.jpg` は公式サイトの写真を切り出したものです（上記(1)に含む）。
 
 | キー | ファイル | 撮影者 | ライセンス | 出典 |
 |---|---|---|---|---|

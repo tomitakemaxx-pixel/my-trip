@@ -130,7 +130,7 @@ function tableHtml(head, rows, o = {}) {
 // ── ページ ──────────────────────────────────────────────
 const DAYS = [
   { n: 1, key: 'd1', date: '3月20日', wd: '土', route: '東京 → 博多 → 武雄温泉',
-    lead: '集合、うどん、特急、そして薪サウナと佐賀牛。今回の山場は初日です。', blocks: D.DAY1 },
+    lead: '集合、博多の海鮮、特急、そして薪サウナと佐賀牛。今回の山場は初日です。', blocks: D.DAY1 },
   { n: 2, key: 'd2', date: '3月21日', wd: '日', route: '武雄温泉 → 博多・天神',
     lead: '朝の入替サウナから、ラーメン、自由行動、もつ鍋、屋台、締めのサウナへ。', blocks: D.DAY2 },
   { n: 3, key: 'd3', date: '3月22日', wd: '月・振休', route: '天神 → 長浜 → 博多 → 成田',
@@ -143,12 +143,14 @@ const HIGHLIGHTS = [
   ['🌸', '御船山楽園の夜桜', '九州最大級のライトアップ。宿泊者は入園無料', 'd3'],
 ];
 
-function creditRows() {
-  const creds = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets', 'img', 'credits.json'), 'utf8'));
-  return Object.keys(creds).sort().map((k) => {
-    const c = creds[k];
-    return [c.file.replace(/^File:/, ''), (c.artist || '不明').replace(/\s+/g, ' ').slice(0, 46), c.lic];
-  });
+const CREDS = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets', 'img', 'credits.json'), 'utf8'));
+function creditRows(kind) {
+  return Object.keys(CREDS).sort()
+    .filter((k) => (kind === 'official') === (CREDS[k].source === 'official'))
+    .map((k) => {
+      const c = CREDS[k];
+      return [c.file.replace(/^File:/, ''), (c.artist || '不明').replace(/\s+/g, ' ').slice(0, 46), c.lic];
+    });
 }
 
 const html = `<title>三十路会 佐賀・福岡しおり</title>
@@ -390,7 +392,7 @@ tr.total th,tr.total td{background:var(--gold-soft);color:var(--gold);font-weigh
 </style>
 
 <header class="hero">
-  <img src="${dataUri('cover_banner')}" alt="武雄温泉の楼門">
+  <img src="${dataUri('cover_sakura_night')}" alt="夜桜にライトアップされた御船山楽園">
   <div class="hero-in">
     <p class="kicker">三十路会 ／ 第4回</p>
     <h1>佐賀・福岡旅行</h1>
@@ -525,9 +527,12 @@ ${DAYS.map((d) => `<section id="${d.key}">
 
 <section id="cred">
   <div class="ch"><span class="num">Ⅸ</span><h2>写真について</h2></div>
-  <p class="ld" style="font-size:.83rem;color:var(--dim);margin:.4rem 0 .2rem">
-    写真はウィキメディア・コモンズの自由利用可能な画像です。施設内部（らかんの湯の薪サウナ・露天風呂など）は公開写真がないため、雰囲気の近い別の場所の写真を「イメージ」として掲載しています。実際の設備とは異なります。</p>
-  ${tableHtml(['ファイル', '撮影者', 'ライセンス'], creditRows())}
+  <p class="ld" style="font-size:.83rem;color:var(--dim);margin:.4rem 0 .6rem">
+    このしおりは参加メンバー5人に配る私的な文書です。らかんの湯・料理・客室・庭園など施設の写真は各施設の公式サイトのもの、博多駅・空港・屋台・中洲など街の風景はウィキメディア・コモンズの自由利用可能な画像です。</p>
+  <h3>各施設の公式サイト</h3>
+  ${tableHtml(['ファイル', '提供', '出所'], creditRows('official'))}
+  <h3>ウィキメディア・コモンズ</h3>
+  ${tableHtml(['ファイル', '撮影者', 'ライセンス'], creditRows('commons'))}
 </section>
 
 <div class="end">
