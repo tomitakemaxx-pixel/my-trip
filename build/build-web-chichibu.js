@@ -346,8 +346,9 @@ tr.total th,tr.total td{background:var(--gold-soft);color:var(--gold);font-weigh
   <h3>(3) 特急ラビューの予約状況</h3>
   ${tableHtml(D.TRAIN.head, D.TRAIN.rows)}
   <div class="call"><ul>${D.TRAIN.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-  <h3>子どもの席を取るかどうか</h3>
+  <h3>子どもの運賃と特急料金</h3>
   ${tableHtml(D.KIDS_FARE.head, D.KIDS_FARE.rows)}
+  <div class="call"><ul>${D.KIDS_FARE.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 
   <h3>(4) 座席の並び</h3>
   <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">席番はA・B・C・Dが、進行方向に向かって左から順に並びます。Aが左の窓側、Dが右の窓側です。</p>

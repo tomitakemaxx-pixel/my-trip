@@ -154,8 +154,10 @@ function chapter1() {
   out.push(spacer(130));
   out.push(noteBox(D.TRAIN.notes, { color: C.d1, bg: C.d1bg }));
   out.push(spacer(170));
-  out.push(P('子どもの席を取るかどうか', { size: 19, bold: true, color: C.brandMid, after: 80, line: 260 }));
-  out.push(dataTable(D.KIDS_FARE.head, D.KIDS_FARE.rows, [2600, 7146], { color: C.brandMid }));
+  out.push(P('子どもの運賃と特急料金', { size: 19, bold: true, color: C.brandMid, after: 80, line: 260 }));
+  out.push(dataTable(D.KIDS_FARE.head, D.KIDS_FARE.rows, [2900, 6846], { color: C.brandMid }));
+  out.push(spacer(130));
+  out.push(noteBox(D.KIDS_FARE.notes, { color: C.brandMid, bg: C.brandBg }));
 
   out.push(pageBreak());
   out.push(sub('(4) 座席の並び'));
