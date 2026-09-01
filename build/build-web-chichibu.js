@@ -22,6 +22,30 @@ function creditRows(kind) {
     });
 }
 
+
+// 座席図。表ではなくグリッドで組む（狭い画面でも6列が崩れないように）
+const SEAT_LABEL = { '大人': ['大人', 'ad'], '子ども': ['子ども', 'kid'], '‖': ['', 'aisle'] };
+
+function seatMapHtml(block) {
+  const head = D.SEATS.head.map((h, i) => {
+    if (i === 0) return '<div class="sm-corner"></div>';
+    if (i === 3) return '<div class="sm-aisle"></div>';   // 通路。狭いので見出しは出さない
+    const [a, b] = String(h).split('（');
+    return `<div class="sm-h">${esc(a)}${b ? `<span>${esc(b.replace('）', ''))}</span>` : ''}</div>`;
+  }).join('');
+  const body = block.rows.map((r) => r.map((v, i) => {
+    if (i === 0) return `<div class="sm-row">${esc(v)}</div>`;
+    const m = SEAT_LABEL[v];
+    if (!m) return '<div class="sm-cell sm-other">ほかの<br>お客さま</div>';
+    return `<div class="sm-cell sm-${m[1]}">${esc(m[0])}</div>`;
+  }).join('')).join('');
+  return `<figure class="seatmap">
+    <figcaption>${esc(block.title)}</figcaption>
+    <p class="sm-dir">↑ 進行方向</p>
+    <div class="sm-grid">${head}${body}</div>
+  </figure>`;
+}
+
 const DAYS = [
   { n: 1, key: 'd1', date: '9月21日', wd: '月・敬老の日', route: '東京 → 横瀬 → ミューズパーク',
     lead: '川でマスをつかまえて、ぶどうを食べて、夜はコテージのテラスでBBQ。', blocks: D.DAY1 },
@@ -87,6 +111,29 @@ img{display:block;max-width:100%}
 .hero .place{font-size:clamp(.74rem,3.2vw,.86rem);color:#E4E9E1;margin:0 0 .45rem;text-wrap:balance;padding:0 .5rem}
 .hero .when{font-family:var(--disp);font-size:1rem;color:#FFF8EA;margin:0;font-variant-numeric:tabular-nums}
 
+/* ── 座席図 ── */
+.seatmap{margin:1.1rem 0 0;padding:0}
+.seatmap figcaption{font-family:var(--disp);font-weight:700;font-size:.95rem;color:var(--sugi);
+  margin-bottom:.15rem}
+.sm-dir{margin:0 0 .35rem;font-size:.72rem;font-weight:700;color:var(--mut);text-align:center;
+  letter-spacing:.12em}
+.sm-grid{display:grid;grid-template-columns:2.5rem 1fr 1fr .55rem 1fr 1fr;gap:.24rem;
+  background:var(--card);border:1px solid var(--rule);border-radius:.7rem;padding:.4rem;
+  box-shadow:var(--shadow)}
+.sm-h{font-size:.66rem;font-weight:700;color:var(--dim);text-align:center;line-height:1.35;
+  padding:.2rem 0;align-self:end}
+.sm-h span{display:block;font-weight:500;font-size:.6rem;color:var(--mut)}
+.sm-corner{}
+.sm-row{font-size:.72rem;font-weight:700;color:var(--dim);text-align:center;
+  display:flex;align-items:center;justify-content:center}
+.sm-cell{display:flex;align-items:center;justify-content:center;text-align:center;
+  min-height:2.9rem;border-radius:.42rem;font-size:.88rem;font-weight:700;line-height:1.3}
+.sm-ad{background:var(--sugi-soft);color:var(--sugi);border:1px solid color-mix(in srgb,var(--sugi) 32%,transparent)}
+.sm-kid{background:var(--kaki-soft);color:var(--kaki);border:1px solid color-mix(in srgb,var(--kaki) 34%,transparent)}
+.sm-other{background:var(--card2);color:var(--mut);border:1px dashed var(--rule);
+  font-size:.62rem;font-weight:500}
+.sm-aisle,.sm-cell.sm-aisle{background:none;border:0;min-height:0}
+
 /* ── ナビ ── */
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);
   backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
@@ -129,6 +176,7 @@ h3{font-size:1rem;font-weight:700;margin:2rem 0 .7rem;padding-left:.62rem;border
 
 .call{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--sugi);
   border-radius:0 14px 14px 0;padding:1rem 1.1rem;margin:1.2rem 0;box-shadow:var(--shadow)}
+.call.warn{border-left-color:var(--kaki);background:var(--kaki-soft)}
 .call b{display:block;font-family:var(--disp);color:var(--sugi);font-size:.95rem;margin-bottom:.45rem}
 .call ul{margin:0;padding-left:1.05rem}
 .call li{font-size:.89rem;color:var(--dim);margin:.28rem 0;line-height:1.75}
@@ -267,6 +315,7 @@ tr.total th,tr.total td{background:var(--gold-soft);color:var(--gold);font-weigh
     <a href="#fixes">変えたところ</a>
     <a href="#money">見積</a>
     <a href="#pack">持ち物</a>
+    <a href="#todo">やること</a>
     <a href="#tel">連絡先</a>
   </div>
 </nav>
@@ -300,10 +349,16 @@ tr.total th,tr.total td{background:var(--gold-soft);color:var(--gold);font-weigh
   <h3>子どもの席を取るかどうか</h3>
   ${tableHtml(D.KIDS_FARE.head, D.KIDS_FARE.rows)}
 
-  <h3>(4) 9月下旬の秩父</h3>
+  <h3>(4) 座席の並び</h3>
+  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">席番はA・B・C・Dが、進行方向に向かって左から順に並びます。Aが左の窓側、Dが右の窓側です。</p>
+  ${seatMapHtml(D.SEATS.out)}
+  ${seatMapHtml(D.SEATS.back)}
+  <div class="call"><ul>${D.SEATS.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(5) 9月下旬の秩父</h3>
   ${tableHtml(D.WEATHER.head, D.WEATHER.rows)}
 
-  <h3>(5) どこに何があるか</h3>
+  <h3>(6) どこに何があるか</h3>
   ${photo('map_wide', '東京から秩父まで、特急ラビューで約80分。乗り換えは池袋の1回だけです')}
   ${photo('map_chichibu', '横瀬駅と西武秩父駅は隣どうし。ミューズパークは荒川をはさんで西の尾根の上にあります')}
   <ul class="plain">
@@ -375,9 +430,14 @@ ${DAYS.map((d) => `<section id="${d.key}">
   <ol class="nums warn">${D.CAUTIONS.map((t) => `<li>${esc(t)}</li>`).join('')}</ol>
 </section>
 
-<section id="check">
-  <div class="ch"><span class="num">Ⅸ</span><h2>出発前に確認すること</h2></div>
-  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">農園への朝の電話ついでに、まとめて聞いてしまうのが早いです。</p>
+<section id="todo">
+  <div class="ch"><span class="num">Ⅸ</span><h2>出発までにやること</h2></div>
+  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">上から順に片づければ、出発前日には何も残りません。</p>
+  ${tableHtml(D.TODO.head, D.TODO.rows).replace('class="tw"', 'class="tw warn"')}
+  <div class="call warn"><ul>${D.TODO.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>電話で確認すること</h3>
+  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">農園への電話ついでに、まとめて聞いてしまうのが早いです。</p>
   ${tableHtml(D.TOCHECK.head, D.TOCHECK.rows).replace('class="tw"', 'class="tw warn"')}
   <h3>確認が取れたもの</h3>
   ${tableHtml(D.TOCHECK.head, D.TOCHECK.resolved)}

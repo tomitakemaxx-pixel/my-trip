@@ -34,6 +34,52 @@ const {
   dataTable, noteBox, renderDay, dayHeader,
 } = K;
 
+
+// ═══════════════════════════════════════════════════════════
+//  座席図（ラビューの号車内の並び）
+// ═══════════════════════════════════════════════════════════
+// 席番はA・B・C・Dが進行方向に向かって左から。A＝左窓／D＝右窓。
+const SEAT_W = [1146, 1975, 1975, 700, 1975, 1975];
+
+function seatFill(v) {
+  if (v === '大人') return { bg: C.brandBg, fg: C.brand };
+  if (v === '子ども') return { bg: C.d1bg, fg: C.d1 };
+  if (v === '‖') return { bg: C.hair2, fg: C.muted };
+  return { bg: C.paper, fg: C.muted };            // 他のお客さま
+}
+
+function seatMap(block) {
+  const out = [];
+  out.push(P(block.title, { size: 19, bold: true, color: C.brand, after: 70, line: 260, keepNext: true }));
+  out.push(P('↑ 進行方向', { size: 16, bold: true, color: C.muted, align: AlignmentType.CENTER, after: 40, line: 230, keepNext: true }));
+
+  const rs = [];
+  rs.push(new TableRow({
+    tableHeader: true, cantSplit: true,
+    children: D.SEATS.head.map((h, i) => cell(
+      P(h, { size: 15, bold: true, color: C.white, align: AlignmentType.CENTER, after: 0, line: 220 }),
+      { w: SEAT_W[i], fill: C.brandMid, valign: VerticalAlign.CENTER, mt: 70, mb: 70 })),
+  }));
+  block.rows.forEach((r) => {
+    rs.push(new TableRow({
+      cantSplit: true,
+      children: r.map((v, i) => {
+        if (i === 0) {
+          return cell(P(v, { size: 16, bold: true, color: C.ink, align: AlignmentType.CENTER, after: 0, line: 230 }),
+            { w: SEAT_W[i], fill: C.cream, valign: VerticalAlign.CENTER, mt: 110, mb: 110 });
+        }
+        const f = seatFill(v);
+        return cell(P(v === '‖' ? '' : v,
+          { size: v === '大人' || v === '子ども' ? 19 : 14, bold: v === '大人' || v === '子ども',
+            color: f.fg, align: AlignmentType.CENTER, after: 0, line: 230 }),
+          { w: SEAT_W[i], fill: f.bg, valign: VerticalAlign.CENTER, mt: 110, mb: 110 });
+      }),
+    }));
+  });
+  out.push(table(rs, { cols: SEAT_W }));
+  return out;
+}
+
 // ═══════════════════════════════════════════════════════════
 //  表紙
 // ═══════════════════════════════════════════════════════════
@@ -111,13 +157,23 @@ function chapter1() {
   out.push(P('子どもの席を取るかどうか', { size: 19, bold: true, color: C.brandMid, after: 80, line: 260 }));
   out.push(dataTable(D.KIDS_FARE.head, D.KIDS_FARE.rows, [2600, 7146], { color: C.brandMid }));
 
-  out.push(sub('(4) 9月下旬の秩父'));
+  out.push(pageBreak());
+  out.push(sub('(4) 座席の並び'));
+  out.push(P('席番はA・B・C・Dが、進行方向に向かって左から順に並びます。Aが左の窓側、Dが右の窓側です。',
+    { size: 18, color: C.ink2, after: 130, line: 265 }));
+  out.push(...seatMap(D.SEATS.out));
+  out.push(spacer(190));
+  out.push(...seatMap(D.SEATS.back));
+  out.push(spacer(150));
+  out.push(noteBox(D.SEATS.notes, { color: C.brandMid, bg: C.brandBg }));
+
+  out.push(sub('(5) 9月下旬の秩父'));
   out.push(dataTable(D.WEATHER.head, D.WEATHER.rows, [2200, 7546], { color: C.brand }));
 
-  out.push(sub('(5) どこに何があるか'));
-  out.push(...figure('map_wide', CONTENT_IN, '東京から秩父まで、特急ラビューで約80分。乗り換えは池袋の1回だけです', { maxH: 4.3 }));
+  out.push(sub('(6) どこに何があるか'));
+  out.push(...figure('map_wide', CONTENT_IN, '東京から秩父まで、特急ラビューで約80分。乗り換えは池袋の1回だけです', { maxH: 3.8 }));
   out.push(spacer(70));
-  out.push(...figure('map_chichibu', CONTENT_IN, '横瀬駅と西武秩父駅は隣どうし。ミューズパークは荒川をはさんで西の尾根の上にあります', { maxH: 4.6 }));
+  out.push(...figure('map_chichibu', CONTENT_IN, '横瀬駅と西武秩父駅は隣どうし。ミューズパークは荒川をはさんで西の尾根の上にあります', { maxH: 4.1 }));
   out.push(spacer(60));
   out.push(bullet('1日目は 横瀬駅 → 小松沢レジャー農園（横瀬）→ ミューズパーク（PICA秩父）と動きます。'));
   out.push(bullet('2日目は ミューズパークの中で遊んでから、ぐるりん号で西武秩父駅へ出ます。'));
@@ -226,12 +282,22 @@ function rest() {
   });
   out.push(pageBreak());
 
-  out.push(...chapter('Ⅸ', '出発前に確認すること'));
-  out.push(P('電話で聞けばすぐ済むものばかりです。農園への朝の電話ついでに、まとめて聞いてしまうのが早いです。',
+  out.push(...chapter('Ⅸ', '出発までにやること'));
+
+  out.push(sub('(1) 日付つきのやることリスト', C.alert));
+  out.push(P('上から順に片づければ、出発前日には何も残りません。',
+    { size: 18, color: C.ink2, after: 120, line: 265 }));
+  out.push(dataTable(D.TODO.head, D.TODO.rows, [1900, 3300, 4546], { color: C.alert, firstFill: C.alertBg }));
+  out.push(spacer(140));
+  out.push(noteBox(D.TODO.notes, { color: C.alert, bg: C.alertBg }));
+  out.push(pageBreak());
+
+  out.push(sub('(2) 電話で確認すること', C.alert));
+  out.push(P('電話で聞けばすぐ済むものばかりです。農園への電話ついでに、まとめて聞いてしまうのが早いです。',
     { size: 18, color: C.ink2, after: 120, line: 265 }));
   out.push(dataTable(D.TOCHECK.head, D.TOCHECK.rows, [2600, 4400, 2746], { color: C.alert, firstFill: C.alertBg }));
   out.push(spacer(200));
-  out.push(P('しおり作成時点で確認が取れたもの', { size: 19, bold: true, color: C.brand, after: 90, line: 260 }));
+  out.push(sub('(3) しおり作成時点で確認が取れたもの'));
   out.push(dataTable(D.TOCHECK.head, D.TOCHECK.resolved, [2600, 4400, 2746], { color: C.brand, firstFill: C.brandBg }));
   out.push(pageBreak());
 
