@@ -5,7 +5,7 @@
 | 旅 | 日程 | 人数 |
 |---|---|---|
 | 三十路会 佐賀・福岡旅行 | 2027年3月20日(土)〜22日(月・振休) 2泊3日 | 友人5人 |
-| 秩父ファミリー旅行 | 2026年9月21日(月・敬老の日)〜22日(火・国民の休日) 1泊2日 | 髙山家4人 |
+| 秩父ファミリー旅行 | 2026年9月21日(月・敬老の日)〜22日(火・国民の休日) 1泊2日 | 髙山家6人 |
 
 ## 成果物
 
@@ -14,8 +14,8 @@ dist/三十路会_佐賀福岡旅行しおり_ver01.docx   A4縦26ページ / Yu
 dist/三十路会_佐賀福岡旅行しおり_ver01.pdf    LINE配布用
 dist/shiori-web.html                          スマホ用（写真内蔵の単一HTML）
 
-dist/秩父ファミリー旅行しおり_ver01.docx      A4縦26ページ / Yu Gothic / 作成者「髙山浩和」
-dist/秩父ファミリー旅行しおり_ver01.pdf       配布用
+dist/秩父ファミリー旅行しおり_ver02.docx      A4縦29ページ / Yu Gothic / 作成者「髙山浩和」
+dist/秩父ファミリー旅行しおり_ver02.pdf       配布用
 dist/chichibu-web.html                        スマホ用（写真・地図内蔵の単一HTML）
 ```
 
@@ -52,7 +52,7 @@ node build/build-chichibu.js
 # PDF（LibreOffice。日本語グリフのため JP フォントを明示して書き出す）
 SHIORI_FONT="Noto Sans CJK JP" SHIORI_OUT="_tmp.docx" node build/build-chichibu.js
 soffice --headless --convert-to pdf --outdir dist dist/_tmp.docx
-mv dist/_tmp.pdf "dist/秩父ファミリー旅行しおり_ver01.pdf" && rm dist/_tmp.docx
+mv dist/_tmp.pdf "dist/秩父ファミリー旅行しおり_ver02.pdf" && rm dist/_tmp.docx
 
 # Web版
 python3 build/make-web-images.py

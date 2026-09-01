@@ -78,7 +78,7 @@ function cover() {
   out.push(table([new TableRow({ children: cards })], { cols: [cw, gap, cw, gap, cw] }));
 
   out.push(spacer(230));
-  out.push(P('作成：髙山浩和　／　2026年8月29日　ver.01', { size: 17, color: C.muted, align: AlignmentType.CENTER, after: 0, line: 250 }));
+  out.push(P('作成：髙山浩和　／　2026年9月1日　ver.02（6名版）', { size: 17, color: C.muted, align: AlignmentType.CENTER, after: 0, line: 250 }));
   out.push(pageBreak());
   return out;
 }
@@ -103,10 +103,18 @@ function chapter1() {
   out.push(sub('(2) メンバー'));
   out.push(dataTable(D.MEMBERS.head, D.MEMBERS.rows, [1900, 1500, 6346], { color: C.brand }));
 
-  out.push(sub('(3) 9月下旬の秩父'));
+  out.push(sub('(3) 特急ラビューの予約状況'));
+  out.push(dataTable(D.TRAIN.head, D.TRAIN.rows, [1900, 4200, 1500, 2146], { color: C.d1, firstFill: C.d1bg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.TRAIN.notes, { color: C.d1, bg: C.d1bg }));
+  out.push(spacer(170));
+  out.push(P('子どもの席を取るかどうか', { size: 19, bold: true, color: C.brandMid, after: 80, line: 260 }));
+  out.push(dataTable(D.KIDS_FARE.head, D.KIDS_FARE.rows, [2600, 7146], { color: C.brandMid }));
+
+  out.push(sub('(4) 9月下旬の秩父'));
   out.push(dataTable(D.WEATHER.head, D.WEATHER.rows, [2200, 7546], { color: C.brand }));
 
-  out.push(sub('(4) どこに何があるか'));
+  out.push(sub('(5) どこに何があるか'));
   out.push(...figure('map_wide', CONTENT_IN, '東京から秩父まで、特急ラビューで約80分。乗り換えは池袋の1回だけです', { maxH: 4.3 }));
   out.push(spacer(70));
   out.push(...figure('map_chichibu', CONTENT_IN, '横瀬駅と西武秩父駅は隣どうし。ミューズパークは荒川をはさんで西の尾根の上にあります', { maxH: 4.6 }));
@@ -314,7 +322,7 @@ function build() {
             spacing: { before: 60, after: 0, line: 240 },
             border: { top: { ...line(C.hair, 4), space: 6 } },
             children: [
-              new TextRun({ text: '秩父ファミリー旅行しおり ver.01', font: FONT, size: 15, color: C.muted }),
+              new TextRun({ text: '秩父ファミリー旅行しおり ver.02', font: FONT, size: 15, color: C.muted }),
               new TextRun({ text: '\t', font: FONT, size: 15 }),
               new TextRun({ children: ['− ', PageNumber.CURRENT, ' −'], font: FONT, size: 15, color: C.muted }),
             ],
@@ -327,7 +335,7 @@ function build() {
   });
 
   fs.mkdirSync(OUT, { recursive: true });
-  const name = process.env.SHIORI_OUT || '秩父ファミリー旅行しおり_ver01.docx';
+  const name = process.env.SHIORI_OUT || '秩父ファミリー旅行しおり_ver02.docx';
   return Packer.toBuffer(doc).then((buf) => {
     const p = path.join(OUT, name);
     fs.writeFileSync(p, buf);

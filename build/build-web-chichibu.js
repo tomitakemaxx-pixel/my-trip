@@ -294,10 +294,16 @@ tr.total th,tr.total td{background:var(--gold-soft);color:var(--gold);font-weigh
   ${tableHtml(D.BASIC.head, D.BASIC.rows)}
   <h3>(2) メンバー</h3>
   ${tableHtml(D.MEMBERS.head, D.MEMBERS.rows)}
-  <h3>(3) 9月下旬の秩父</h3>
+  <h3>(3) 特急ラビューの予約状況</h3>
+  ${tableHtml(D.TRAIN.head, D.TRAIN.rows)}
+  <div class="call"><ul>${D.TRAIN.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+  <h3>子どもの席を取るかどうか</h3>
+  ${tableHtml(D.KIDS_FARE.head, D.KIDS_FARE.rows)}
+
+  <h3>(4) 9月下旬の秩父</h3>
   ${tableHtml(D.WEATHER.head, D.WEATHER.rows)}
 
-  <h3>(4) どこに何があるか</h3>
+  <h3>(5) どこに何があるか</h3>
   ${photo('map_wide', '東京から秩父まで、特急ラビューで約80分。乗り換えは池袋の1回だけです')}
   ${photo('map_chichibu', '横瀬駅と西武秩父駅は隣どうし。ミューズパークは荒川をはさんで西の尾根の上にあります')}
   <ul class="plain">
@@ -402,7 +408,7 @@ ${DAYS.map((d) => `<section id="${d.key}">
 
 <div class="end">
   <p class="l1">それでは、9月21日 7時45分に出発です。</p>
-  <p class="l2">作成：髙山浩和　／　2026年8月29日　ver.01</p>
+  <p class="l2">作成：髙山浩和　／　2026年9月1日　ver.02（6名版）</p>
 </div>
 
 </main>
