@@ -10,7 +10,7 @@ const { makeWebKit } = require('./web-kit.js');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'dist', 'chichibu-web.html');
 const K = makeWebKit(path.join(__dirname, 'web-img'));
-const { dataUri, esc, photo, renderDay, tableHtml } = K;
+const { dataUri, esc, photo, photoPair, renderDay, tableHtml } = K;
 
 const CREDS = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets', 'img', 'credits.json'), 'utf8'));
 function creditRows(kind) {
@@ -177,6 +177,8 @@ h3{font-size:1rem;font-weight:700;margin:2rem 0 .7rem;padding-left:.62rem;border
 .call{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--sugi);
   border-radius:0 14px 14px 0;padding:1rem 1.1rem;margin:1.2rem 0;box-shadow:var(--shadow)}
 .call.warn{border-left-color:var(--kaki);background:var(--kaki-soft)}
+.call.gold{border-left-color:var(--gold);background:var(--gold-soft)}
+.ch.d2 .num{background:var(--sora)}
 .call b{display:block;font-family:var(--disp);color:var(--sugi);font-size:.95rem;margin-bottom:.45rem}
 .call ul{margin:0;padding-left:1.05rem}
 .call li{font-size:.89rem;color:var(--dim);margin:.28rem 0;line-height:1.75}
@@ -316,6 +318,7 @@ tr.total th,tr.total td{background:var(--gold-soft);color:var(--gold);font-weigh
     <a href="#money">見積</a>
     <a href="#pack">持ち物</a>
     <a href="#todo">やること</a>
+    <a href="#plan2" class="n2">2日目の相談</a>
     <a href="#tel">連絡先</a>
   </div>
 </nav>
@@ -444,8 +447,38 @@ ${DAYS.map((d) => `<section id="${d.key}">
   ${tableHtml(D.TOCHECK.head, D.TOCHECK.resolved)}
 </section>
 
+<section id="plan2">
+  <div class="ch d2"><span class="num">Ⅹ</span><h2>2日目をどうするか</h2></div>
+  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">特急券は変更できます。変えるかどうかを決めるための材料です。</p>
+
+  <h3>(1) 特急券は変更できるのか</h3>
+  ${tableHtml(D.TICKET_RULES.head, D.TICKET_RULES.rows)}
+  <div class="call"><ul>${D.TICKET_RULES.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(2) 復路の候補</h3>
+  ${tableHtml(D.RETURN_TRAINS.head, D.RETURN_TRAINS.rows)}
+  <div class="call"><ul>${D.RETURN_TRAINS.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(3) 樹音の湯と祭の湯はどう違うか</h3>
+  ${tableHtml(D.ONSEN.head, D.ONSEN.rows)}
+  ${photoPair('cb_mat_rotenburo', 'cb_mat_bath', '露天風呂。武甲山を眺めながら入れます', '内湯。高濃度人工炭酸泉やシルク湯があります')}
+  <div class="call"><ul>${D.ONSEN.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(4) 2日目に足せるもの</h3>
+  ${tableHtml(D.DAY2_EXTRA.head, D.DAY2_EXTRA.rows)}
+  <div class="call"><ul>${D.DAY2_EXTRA.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(5) 秩父漫遊きっぷ</h3>
+  ${tableHtml(D.MANYU.head, D.MANYU.rows)}
+  <div class="call gold"><ul>${D.MANYU.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(6) おすすめ</h3>
+  ${tableHtml(D.PROPOSAL.head, D.PROPOSAL.rows).replace('class="tw"', 'class="tw warn"')}
+  <div class="call warn"><ul>${D.PROPOSAL.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+</section>
+
 <section id="tel">
-  <div class="ch"><span class="num">Ⅹ</span><h2>連絡先</h2></div>
+  <div class="ch"><span class="num">Ⅺ</span><h2>連絡先</h2></div>
   <div class="tel">
     ${D.CONTACTS.rows.map(([nm, no, sub]) => `<a href="tel:${no.replace(/-/g, '')}">
       <span class="nm">${esc(nm)}${sub ? `<span class="sub">${esc(sub)}</span>` : ''}</span>

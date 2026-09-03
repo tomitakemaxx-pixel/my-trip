@@ -303,7 +303,50 @@ function rest() {
   out.push(dataTable(D.TOCHECK.head, D.TOCHECK.resolved, [2600, 4400, 2746], { color: C.brand, firstFill: C.brandBg }));
   out.push(pageBreak());
 
-  out.push(...chapter('Ⅹ', '連絡先'));
+  // ── Ⅹ. 2日目をどうするか ─────────────────────────────
+  out.push(...chapter('Ⅹ', '2日目をどうするか', { color: C.d2, bg: C.d2bg }));
+  out.push(P('特急券は変更できます。変えるかどうかを決めるための材料をまとめました。',
+    { size: 18, color: C.ink2, after: 130, line: 265 }));
+
+  out.push(sub('(1) 特急券は変更できるのか', C.d2));
+  out.push(dataTable(D.TICKET_RULES.head, D.TICKET_RULES.rows, [2600, 7146], { color: C.d2, firstFill: C.d2bg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.TICKET_RULES.notes, { color: C.d2, bg: C.d2bg }));
+
+  out.push(sub('(2) 復路の候補', C.d2));
+  out.push(dataTable(D.RETURN_TRAINS.head, D.RETURN_TRAINS.rows, [2300, 1250, 1150, 1350, 3696],
+    { color: C.d2, firstFill: C.d2bg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.RETURN_TRAINS.notes, { color: C.d2, bg: C.d2bg }));
+  out.push(pageBreak());
+
+  out.push(sub('(3) 樹音の湯と祭の湯はどう違うか', C.d2));
+  out.push(dataTable(D.ONSEN.head, D.ONSEN.rows, [1700, 3100, 4946], { color: C.d2, firstFill: C.d2bg, centerHead: true }));
+  out.push(spacer(130));
+  out.push(noteBox(D.ONSEN.notes, { color: C.d2, bg: C.d2bg }));
+  out.push(spacer(150));
+  out.push(figurePair('cb_mat_rotenburo', 'cb_mat_bath',
+    '露天風呂。武甲山を眺めながら入れます', '内湯。高濃度人工炭酸泉やシルク湯があります'));
+  out.push(pageBreak());
+
+  out.push(sub('(4) 2日目に足せるもの', C.d2));
+  out.push(dataTable(D.DAY2_EXTRA.head, D.DAY2_EXTRA.rows, [1900, 3000, 1500, 3346], { color: C.d2, firstFill: C.d2bg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.DAY2_EXTRA.notes, { color: C.d2, bg: C.d2bg }));
+
+  out.push(sub('(5) 秩父漫遊きっぷ', C.gold));
+  out.push(dataTable(D.MANYU.head, D.MANYU.rows, [2400, 7346], { color: C.gold, firstFill: C.goldBg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.MANYU.notes, { color: C.gold, bg: C.goldBg }));
+  out.push(pageBreak());
+
+  out.push(sub('(6) おすすめ', C.alert));
+  out.push(dataTable(D.PROPOSAL.head, D.PROPOSAL.rows, [1900, 7846], { color: C.alert, firstFill: C.alertBg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.PROPOSAL.notes, { color: C.alert, bg: C.alertBg }));
+  out.push(pageBreak());
+
+  out.push(...chapter('Ⅺ', '連絡先'));
   out.push(dataTable(D.CONTACTS.head, D.CONTACTS.rows, [3400, 2300, 4046], { color: C.brand }));
 
   out.push(spacer(260));
