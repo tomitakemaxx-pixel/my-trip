@@ -624,7 +624,7 @@
   "page": "https://www.muse-park.com/map"
  },
  "cb_mp_tower": {
-  "file": "guide07_03n.jpg",
+  "file": "guide07_03an.jpg",
   "artist": "秩父ミューズパーク",
   "lic": "公式サイト",
   "source": "official",
@@ -638,35 +638,35 @@
   "page": "https://www.muse-park.com/guide/facility07"
  },
  "cb_mp_play1": {
-  "file": "guide07_04n.jpg",
+  "file": "guide07_04an.jpg",
   "artist": "秩父ミューズパーク",
   "lic": "公式サイト",
   "source": "official",
   "page": "https://www.muse-park.com/guide/facility07"
  },
  "cb_mp_play2": {
-  "file": "guide07_05n.jpg",
+  "file": "guide07_05an.jpg",
   "artist": "秩父ミューズパーク",
   "lic": "公式サイト",
   "source": "official",
   "page": "https://www.muse-park.com/guide/facility07"
  },
  "cb_mp_play3": {
-  "file": "guide07_07n.jpg",
+  "file": "guide07_07an.jpg",
   "artist": "秩父ミューズパーク",
   "lic": "公式サイト",
   "source": "official",
   "page": "https://www.muse-park.com/guide/facility07"
  },
  "cb_mp_horse": {
-  "file": "guide07_09.jpg",
+  "file": "guide07_09a.jpg",
   "artist": "秩父ミューズパーク",
   "lic": "公式サイト",
   "source": "official",
   "page": "https://www.muse-park.com/guide/facility07"
  },
  "cb_mp_swing": {
-  "file": "guide07_10.jpg",
+  "file": "guide07_10a.jpg",
   "artist": "秩父ミューズパーク",
   "lic": "公式サイト",
   "source": "official",
@@ -748,5 +748,33 @@
   "lic": "CC BY 2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Mount_Bukō_(49577224901).jpg",
   "source": "commons"
+ },
+ "cb_mp_view": {
+  "file": "guide07_12a.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility07"
+ },
+ "cb_mp_ballswing": {
+  "file": "guide07_06a.jpg",
+  "artist": "秩父ミューズパーク",
+  "lic": "公式サイト",
+  "source": "official",
+  "page": "https://www.muse-park.com/guide/facility07"
+ },
+ "map_day2_park": {
+  "file": "map_day2_park.jpg",
+  "artist": "OpenStreetMap contributors",
+  "lic": "ODbL",
+  "source": "osm",
+  "page": "https://www.openstreetmap.org/copyright"
+ },
+ "map_day2_town": {
+  "file": "map_day2_town.jpg",
+  "artist": "OpenStreetMap contributors",
+  "lic": "ODbL",
+  "source": "osm",
+  "page": "https://www.openstreetmap.org/copyright"
  }
 }

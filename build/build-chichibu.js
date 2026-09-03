@@ -334,13 +334,18 @@ function rest() {
   out.push(spacer(130));
   out.push(noteBox(D.DAY2_EXTRA.notes, { color: C.d2, bg: C.d2bg }));
 
-  out.push(sub('(5) 秩父漫遊きっぷ', C.gold));
+  out.push(sub('(5) SLは乗るか、見るか', C.d2));
+  out.push(dataTable(D.SL.head, D.SL.rows, [2400, 7346], { color: C.d2, firstFill: C.d2bg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.SL.notes, { color: C.d2, bg: C.d2bg }));
+
+  out.push(sub('(6) 秩父漫遊きっぷ', C.gold));
   out.push(dataTable(D.MANYU.head, D.MANYU.rows, [2400, 7346], { color: C.gold, firstFill: C.goldBg }));
   out.push(spacer(130));
   out.push(noteBox(D.MANYU.notes, { color: C.gold, bg: C.goldBg }));
   out.push(pageBreak());
 
-  out.push(sub('(6) おすすめ', C.alert));
+  out.push(sub('(7) おすすめ', C.alert));
   out.push(dataTable(D.PROPOSAL.head, D.PROPOSAL.rows, [1900, 7846], { color: C.alert, firstFill: C.alertBg }));
   out.push(spacer(130));
   out.push(noteBox(D.PROPOSAL.notes, { color: C.alert, bg: C.alertBg }));

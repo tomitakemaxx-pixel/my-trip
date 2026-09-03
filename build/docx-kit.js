@@ -306,7 +306,7 @@ function makeKit(C, FONT, IMG) {
         case 'freetime': rows.push(freetimeRow(b, dayPalette(b.color))); break;
         case 'img':
           flush(); out.push(spacer(60));
-          out.push(...figure(b.key, b.w, b.cap, { maxH: 4.3 }));
+          out.push(...figure(b.key, b.w, b.cap, { maxH: b.maxH || 4.3 }));
           break;
         case 'imgpair':
           flush(); out.push(spacer(60));

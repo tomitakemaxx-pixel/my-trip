@@ -468,11 +468,15 @@ ${DAYS.map((d) => `<section id="${d.key}">
   ${tableHtml(D.DAY2_EXTRA.head, D.DAY2_EXTRA.rows)}
   <div class="call"><ul>${D.DAY2_EXTRA.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 
-  <h3>(5) 秩父漫遊きっぷ</h3>
+  <h3>(5) SLは乗るか、見るか</h3>
+  ${tableHtml(D.SL.head, D.SL.rows)}
+  <div class="call"><ul>${D.SL.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(6) 秩父漫遊きっぷ</h3>
   ${tableHtml(D.MANYU.head, D.MANYU.rows)}
   <div class="call gold"><ul>${D.MANYU.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 
-  <h3>(6) おすすめ</h3>
+  <h3>(7) おすすめ</h3>
   ${tableHtml(D.PROPOSAL.head, D.PROPOSAL.rows).replace('class="tw"', 'class="tw warn"')}
   <div class="call warn"><ul>${D.PROPOSAL.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 </section>

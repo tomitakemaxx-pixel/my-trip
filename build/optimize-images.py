@@ -7,7 +7,8 @@ import os, json, sys
 IMG = os.path.join(os.path.dirname(__file__), '..', 'assets', 'img')
 MAXW = {'cover_romon': 2000, 'mf_sakura_day': 2000, 'mf_sakura_night': 2000,
         'cb_bukozan': 2000, 'cb_km_pamphlet': 1200, 'cb_km_farmmap': 1400,
-        'cb_km_calendar': 1400, 'cb_mp_map': 2200, 'map_wide': 1600, 'map_chichibu': 1400}
+        'cb_km_calendar': 1400, 'cb_mp_map': 2200, 'map_wide': 1600, 'map_chichibu': 1400,
+        'map_day2_park': 1000, 'map_day2_town': 1100}
 DEFAULT_MAX = 1300
 QUALITY = 82
 DONE = os.path.join(IMG, '.optimised.json')   # 二重圧縮を避けるための処理済み記録

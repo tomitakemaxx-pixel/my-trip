@@ -140,6 +140,22 @@ BUKO = (35.9516, 139.0978)
 MUSE = (35.9930, 139.0518)
 TABIDACHI = (36.0036, 139.0604)
 
+# ミューズパーク園内（Overpass で取得。公園は南北に約3km ある）
+PICA = (35.98779, 139.04838)          # PICA秩父（園の南のはし）
+JUNE = (35.98754, 139.04788)          # 樹音の湯（PICAのとなり）
+SPORTS = (35.98990, 139.04790)        # スポーツの森（テニスコート一帯。バス停はこのあたり）
+MP_CENTER = (35.99374, 139.05309)     # ミューズパーク中央バス停
+ONGAKUDO = (35.99716, 139.05498)      # 音楽堂・野外ステージ
+SHIBAFU = (35.99874, 139.05767)       # 芝生広場
+
+# 西武秩父駅まわり（Nominatim で取得）
+MATSURI_YU = (35.99039, 139.08366)    # 祭の湯
+OHANABATAKE = (35.99251, 139.08376)   # 御花畑駅（SLが停まる）
+CHICHIBU_JINJA = (35.99758, 139.08424)
+MATSURI_KAIKAN = (35.99721, 139.08527)
+CHICHIBU_STA = (35.99863, 139.08566)  # 秩父鉄道 秩父駅
+MICHINOEKI = (35.99732, 139.08846)
+
 RED, BLUE, GREEN, GOLD, INK = '#C0452B', '#2C5F8A', '#2F6B52', '#B5851F', '#17394F'
 
 if __name__ == '__main__':
@@ -157,8 +173,33 @@ if __name__ == '__main__':
     draw_map('map_chichibu', [
         ('横瀬駅', *YOKOZE, GREEN),
         ('西武秩父駅／祭の湯', *SEIBU_CHICHIBU, INK),
-        ('ミューズパーク（PICA秩父）', *MUSE, BLUE),
-        ('旅立ちの丘', *TABIDACHI, GOLD),
+        ('PICA秩父（泊）', *PICA, BLUE),
+        ('旅立ちの丘・展望ちびっこ広場', *TABIDACHI, GOLD),
         ('武甲山 1,304m', *BUKO, RED),
     ], z=14, margin=(0.006, 0.030), soft=0.30, size=(1700, 1250),
         title='秩父エリアの位置関係')
+
+    # ③ 2日目・ミューズパークの中（南北に細長い）
+    draw_map('map_day2_park', [
+        ('PICA秩父（泊）・樹音の湯', *PICA, RED),
+        ('スポーツの森（バス停）', *SPORTS, GOLD, -6),
+        ('ミューズパーク中央', *MP_CENTER, BLUE),
+        ('音楽堂・野外ステージ', *ONGAKUDO, GREEN),
+        ('芝生広場', *SHIBAFU, GREEN),
+        ('旅立ちの丘・展望ちびっこ広場', *TABIDACHI, GOLD),
+    ], z=16, margin=(0.0016, 0.0030), soft=0.34, size=(1700, 1500),
+        lines=[(PICA, SPORTS), (SPORTS, MP_CENTER), (MP_CENTER, ONGAKUDO),
+               (ONGAKUDO, SHIBAFU), (SHIBAFU, TABIDACHI)],
+        title='2日目①　ミューズパークの中（南北に細長い公園です）')
+
+    # ④ 2日目・西武秩父駅のまわり
+    draw_map('map_day2_town', [
+        ('西武秩父駅・祭の湯', *MATSURI_YU, RED),
+        ('御花畑駅（SL）', *OHANABATAKE, GOLD),
+        ('秩父まつり会館', *MATSURI_KAIKAN, BLUE),
+        ('秩父神社', *CHICHIBU_JINJA, GREEN, -34),
+        ('秩父駅', *CHICHIBU_STA, INK),
+        ('道の駅ちちぶ', *MICHINOEKI, GOLD, 26),
+    ], z=17, margin=(0.0010, 0.0022), soft=0.34, size=(1700, 1500),
+        lines=[(MATSURI_YU, OHANABATAKE), (OHANABATAKE, MATSURI_KAIKAN)],
+        title='2日目②　西武秩父駅のまわり')
