@@ -318,7 +318,7 @@ tr.total th,tr.total td{background:var(--gold-soft);color:var(--gold);font-weigh
     <a href="#money">見積</a>
     <a href="#pack">持ち物</a>
     <a href="#todo">やること</a>
-    <a href="#plan2" class="n2">2日目の相談</a>
+    <a href="#plan2" class="n2">2日目の決定</a>
     <a href="#tel">連絡先</a>
   </div>
 </nav>
@@ -448,8 +448,8 @@ ${DAYS.map((d) => `<section id="${d.key}">
 </section>
 
 <section id="plan2">
-  <div class="ch d2"><span class="num">Ⅹ</span><h2>2日目をどうするか</h2></div>
-  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">特急券は変更できます。変えるかどうかを決めるための材料です。</p>
+  <div class="ch d2"><span class="num">Ⅹ</span><h2>2日目をこう決めました</h2></div>
+  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">復路を ちちぶ40号（16:24発）に変更しました。そこに至るまでに調べたことの記録です。</p>
 
   <h3>(1) 特急券は変更できるのか</h3>
   ${tableHtml(D.TICKET_RULES.head, D.TICKET_RULES.rows)}
@@ -482,15 +482,11 @@ ${DAYS.map((d) => `<section id="${d.key}">
   ${tableHtml(D.TIME_BUDGET.head, D.TIME_BUDGET.rows)}
   <div class="call"><ul>${D.TIME_BUDGET.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 
-  <h3>(8) ちちぶ40号にした場合の2日目</h3>
-  ${tableHtml(D.PLAN40.head, D.PLAN40.rows)}
-  <div class="call"><ul>${D.PLAN40.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-
-  <h3>(9) 展望ちびっこ広場は本当に刺さるか</h3>
+  <h3>(8) 展望ちびっこ広場は本当に刺さるか</h3>
   ${tableHtml(D.PLAYGROUND.head, D.PLAYGROUND.rows)}
   <div class="call gold"><ul>${D.PLAYGROUND.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 
-  <h3>(10) おすすめ</h3>
+  <h3>(9) 決まったこと</h3>
   ${tableHtml(D.PROPOSAL.head, D.PROPOSAL.rows).replace('class="tw"', 'class="tw warn"')}
   <div class="call warn"><ul>${D.PROPOSAL.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 </section>
@@ -520,7 +516,7 @@ ${DAYS.map((d) => `<section id="${d.key}">
 
 <div class="end">
   <p class="l1">それでは、9月21日 7時45分に出発です。</p>
-  <p class="l2">作成：髙山浩和　／　2026年9月1日　ver.02（6名版）</p>
+  <p class="l2">作成：髙山浩和　／　2026年9月5日　ver.03</p>
 </div>
 
 </main>

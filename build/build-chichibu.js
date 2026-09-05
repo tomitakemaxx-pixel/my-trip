@@ -124,7 +124,7 @@ function cover() {
   out.push(table([new TableRow({ children: cards })], { cols: [cw, gap, cw, gap, cw] }));
 
   out.push(spacer(230));
-  out.push(P('作成：髙山浩和　／　2026年9月1日　ver.02（6名版）', { size: 17, color: C.muted, align: AlignmentType.CENTER, after: 0, line: 250 }));
+  out.push(P('作成：髙山浩和　／　2026年9月5日　ver.03', { size: 17, color: C.muted, align: AlignmentType.CENTER, after: 0, line: 250 }));
   out.push(pageBreak());
   return out;
 }
@@ -304,8 +304,8 @@ function rest() {
   out.push(pageBreak());
 
   // ── Ⅹ. 2日目をどうするか ─────────────────────────────
-  out.push(...chapter('Ⅹ', '2日目をどうするか', { color: C.d2, bg: C.d2bg }));
-  out.push(P('特急券は変更できます。変えるかどうかを決めるための材料をまとめました。',
+  out.push(...chapter('Ⅹ', '2日目をこう決めました', { color: C.d2, bg: C.d2bg }));
+  out.push(P('復路を ちちぶ40号（16:24発）に変更しました。そこに至るまでに調べたことを、記録として残しておきます。',
     { size: 18, color: C.ink2, after: 130, line: 265 }));
 
   out.push(sub('(1) 特急券は変更できるのか', C.d2));
@@ -357,23 +357,17 @@ function rest() {
   out.push(noteBox(D.TIME_BUDGET.notes, { color: C.d2, bg: C.d2bg }));
   out.push(pageBreak());
 
-  out.push(sub('(8) ちちぶ40号にした場合の2日目', C.d2));
-  out.push(dataTable(D.PLAN40.head, D.PLAN40.rows, [1300, 4300, 4146], { color: C.d2, firstFill: C.d2bg }));
-  out.push(spacer(130));
-  out.push(noteBox(D.PLAN40.notes, { color: C.d2, bg: C.d2bg }));
-  out.push(pageBreak());
-
-  out.push(sub('(9) 展望ちびっこ広場は本当に刺さるか', C.gold));
+  out.push(sub('(8) 展望ちびっこ広場は本当に刺さるか', C.gold));
   out.push(dataTable(D.PLAYGROUND.head, D.PLAYGROUND.rows, [2700, 3600, 3446],
     { color: C.gold, firstFill: C.goldBg, centerHead: true }));
   out.push(spacer(130));
   out.push(noteBox(D.PLAYGROUND.notes, { color: C.gold, bg: C.goldBg }));
   out.push(pageBreak());
 
-  out.push(sub('(10) おすすめ', C.alert));
-  out.push(dataTable(D.PROPOSAL.head, D.PROPOSAL.rows, [1900, 7846], { color: C.alert, firstFill: C.alertBg }));
+  out.push(sub('(9) 決まったこと', C.brand));
+  out.push(dataTable(D.PROPOSAL.head, D.PROPOSAL.rows, [2400, 7346], { color: C.brand, firstFill: C.brandBg }));
   out.push(spacer(130));
-  out.push(noteBox(D.PROPOSAL.notes, { color: C.alert, bg: C.alertBg }));
+  out.push(noteBox(D.PROPOSAL.notes, { color: C.brand, bg: C.brandBg }));
   out.push(pageBreak());
 
   out.push(...chapter('Ⅺ', '連絡先'));
@@ -463,7 +457,7 @@ function build() {
             spacing: { before: 60, after: 0, line: 240 },
             border: { top: { ...line(C.hair, 4), space: 6 } },
             children: [
-              new TextRun({ text: '秩父ファミリー旅行しおり ver.02', font: FONT, size: 15, color: C.muted }),
+              new TextRun({ text: '秩父ファミリー旅行しおり ver.03', font: FONT, size: 15, color: C.muted }),
               new TextRun({ text: '\t', font: FONT, size: 15 }),
               new TextRun({ children: ['− ', PageNumber.CURRENT, ' −'], font: FONT, size: 15, color: C.muted }),
             ],
@@ -476,7 +470,7 @@ function build() {
   });
 
   fs.mkdirSync(OUT, { recursive: true });
-  const name = process.env.SHIORI_OUT || '秩父ファミリー旅行しおり_ver02.docx';
+  const name = process.env.SHIORI_OUT || '秩父ファミリー旅行しおり_ver03.docx';
   return Packer.toBuffer(doc).then((buf) => {
     const p = path.join(OUT, name);
     fs.writeFileSync(p, buf);
