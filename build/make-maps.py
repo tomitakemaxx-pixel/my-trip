@@ -155,6 +155,7 @@ CHICHIBU_JINJA = (35.99758, 139.08424)
 MATSURI_KAIKAN = (35.99721, 139.08527)
 CHICHIBU_STA = (35.99863, 139.08566)  # 秩父鉄道 秩父駅
 MICHINOEKI = (35.99732, 139.08846)
+KOEN_BASHI = (36.00176, 139.07556)    # 秩父公園橋（ぐるりん号が荒川を渡るところ）
 
 RED, BLUE, GREEN, GOLD, INK = '#C0452B', '#2C5F8A', '#2F6B52', '#B5851F', '#17394F'
 
@@ -203,3 +204,15 @@ if __name__ == '__main__':
     ], z=17, margin=(0.0010, 0.0022), soft=0.34, size=(1700, 1500),
         lines=[(MATSURI_YU, OHANABATAKE), (OHANABATAKE, MATSURI_KAIKAN)],
         title='2日目②　西武秩父駅のまわり')
+
+    # ⑤ 2日目・ぐるりん号でパークから駅へ出るまでの動線
+    draw_map('map_day2_route', [
+        ('PICA秩父（泊）', *PICA, RED, -6),
+        ('スポーツの森（乗る）', *SPORTS, GOLD, 22),
+        ('旅立ちの丘・展望ちびっこ広場', *TABIDACHI, GOLD),
+        ('秩父公園橋', *KOEN_BASHI, BLUE),
+        ('西武秩父駅・祭の湯', *SEIBU_CHICHIBU, INK),
+    ], z=15, margin=(0.006, 0.008), soft=0.36, size=(1700, 1200),
+        lines=[(PICA, SPORTS), (SPORTS, MP_CENTER), (MP_CENTER, TABIDACHI),
+               (TABIDACHI, KOEN_BASHI), (KOEN_BASHI, SEIBU_CHICHIBU)],
+        title='2日目③　ぐるりん号の動線　パーク → 荒川を渡る → 西武秩父駅')

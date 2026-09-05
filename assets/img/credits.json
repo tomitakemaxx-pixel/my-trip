@@ -776,5 +776,12 @@
   "lic": "ODbL",
   "source": "osm",
   "page": "https://www.openstreetmap.org/copyright"
+ },
+ "map_day2_route": {
+  "file": "map_day2_route.jpg",
+  "artist": "OpenStreetMap contributors",
+  "lic": "ODbL",
+  "source": "osm",
+  "page": "https://www.openstreetmap.org/copyright"
  }
 }
