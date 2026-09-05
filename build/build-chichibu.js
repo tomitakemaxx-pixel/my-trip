@@ -345,23 +345,32 @@ function rest() {
   out.push(noteBox(D.MANYU.notes, { color: C.gold, bg: C.goldBg }));
   out.push(pageBreak());
 
-  out.push(sub('(7) ちちぶ44号にした場合の2日目', C.d2));
-  out.push(dataTable(D.PLAN44.head, D.PLAN44.rows, [1300, 4200, 4246], { color: C.d2, firstFill: C.d2bg }));
-  out.push(spacer(160));
-  out.push(P('入れ替えるとしたら', { size: 19, bold: true, color: C.d2, after: 80, line: 260 }));
-  out.push(dataTable(D.PLAN44.alt.head, D.PLAN44.alt.rows, [2400, 7346], { color: C.d2, firstFill: C.d2bg }));
+  out.push(sub('(7) 復路をどれにするか', C.d2));
+  out.push(P('ぐるりん号で西武秩父駅に着くのが13:17です。そこから発車までの持ち時間から、下の101分を引いた残りが温泉に回せます。',
+    { size: 18, color: C.ink2, after: 120, line: 265 }));
+  out.push(dataTable(D.TIME_BUDGET.fixed.head, D.TIME_BUDGET.fixed.rows, [5400, 4346],
+    { color: C.brandMid, firstFill: C.brandBg }));
+  out.push(spacer(180));
+  out.push(dataTable(D.TIME_BUDGET.head, D.TIME_BUDGET.rows, [2200, 1150, 1350, 1800, 3246],
+    { color: C.d2, firstFill: C.d2bg }));
   out.push(spacer(130));
-  out.push(noteBox(D.PLAN44.notes, { color: C.d2, bg: C.d2bg }));
+  out.push(noteBox(D.TIME_BUDGET.notes, { color: C.d2, bg: C.d2bg }));
   out.push(pageBreak());
 
-  out.push(sub('(8) 展望ちびっこ広場は本当に刺さるか', C.gold));
+  out.push(sub('(8) ちちぶ40号にした場合の2日目', C.d2));
+  out.push(dataTable(D.PLAN40.head, D.PLAN40.rows, [1300, 4300, 4146], { color: C.d2, firstFill: C.d2bg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.PLAN40.notes, { color: C.d2, bg: C.d2bg }));
+  out.push(pageBreak());
+
+  out.push(sub('(9) 展望ちびっこ広場は本当に刺さるか', C.gold));
   out.push(dataTable(D.PLAYGROUND.head, D.PLAYGROUND.rows, [2700, 3600, 3446],
     { color: C.gold, firstFill: C.goldBg, centerHead: true }));
   out.push(spacer(130));
   out.push(noteBox(D.PLAYGROUND.notes, { color: C.gold, bg: C.goldBg }));
   out.push(pageBreak());
 
-  out.push(sub('(9) おすすめ', C.alert));
+  out.push(sub('(10) おすすめ', C.alert));
   out.push(dataTable(D.PROPOSAL.head, D.PROPOSAL.rows, [1900, 7846], { color: C.alert, firstFill: C.alertBg }));
   out.push(spacer(130));
   out.push(noteBox(D.PROPOSAL.notes, { color: C.alert, bg: C.alertBg }));

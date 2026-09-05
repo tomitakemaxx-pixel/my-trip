@@ -476,17 +476,21 @@ ${DAYS.map((d) => `<section id="${d.key}">
   ${tableHtml(D.MANYU.head, D.MANYU.rows)}
   <div class="call gold"><ul>${D.MANYU.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 
-  <h3>(7) ちちぶ44号にした場合の2日目</h3>
-  ${tableHtml(D.PLAN44.head, D.PLAN44.rows)}
-  <h3>入れ替えるとしたら</h3>
-  ${tableHtml(D.PLAN44.alt.head, D.PLAN44.alt.rows)}
-  <div class="call"><ul>${D.PLAN44.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+  <h3>(7) 復路をどれにするか</h3>
+  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">ぐるりん号で西武秩父駅に着くのが13:17です。そこから発車までの持ち時間から、下の101分を引いた残りが温泉に回せます。</p>
+  ${tableHtml(D.TIME_BUDGET.fixed.head, D.TIME_BUDGET.fixed.rows)}
+  ${tableHtml(D.TIME_BUDGET.head, D.TIME_BUDGET.rows)}
+  <div class="call"><ul>${D.TIME_BUDGET.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 
-  <h3>(8) 展望ちびっこ広場は本当に刺さるか</h3>
+  <h3>(8) ちちぶ40号にした場合の2日目</h3>
+  ${tableHtml(D.PLAN40.head, D.PLAN40.rows)}
+  <div class="call"><ul>${D.PLAN40.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(9) 展望ちびっこ広場は本当に刺さるか</h3>
   ${tableHtml(D.PLAYGROUND.head, D.PLAYGROUND.rows)}
   <div class="call gold"><ul>${D.PLAYGROUND.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 
-  <h3>(9) おすすめ</h3>
+  <h3>(10) おすすめ</h3>
   ${tableHtml(D.PROPOSAL.head, D.PROPOSAL.rows).replace('class="tw"', 'class="tw warn"')}
   <div class="call warn"><ul>${D.PROPOSAL.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 </section>
