@@ -179,6 +179,14 @@ h3{font-size:1rem;font-weight:700;margin:2rem 0 .7rem;padding-left:.62rem;border
 .call.warn{border-left-color:var(--kaki);background:var(--kaki-soft)}
 .call.gold{border-left-color:var(--gold);background:var(--gold-soft)}
 .ch.d2 .num{background:var(--sora)}
+.ch.warn .num{background:var(--kaki)}
+.strip{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:.9rem 0}
+@media (max-width:33.9rem){.strip{grid-template-columns:1fr}}
+.strip-col{background:var(--card);border:1px solid var(--rule);border-radius:.7rem;padding:.75rem .9rem .8rem;box-shadow:var(--shadow);border-top:4px solid var(--sugi)}
+.strip-col.d1{border-top-color:var(--kaki)} .strip-col.d2{border-top-color:var(--sora)}
+.strip-col b{display:block;font-family:var(--disp);font-size:.92rem;margin-bottom:.4rem}
+.strip-col.d1 b{color:var(--kaki)} .strip-col.d2 b{color:var(--sora)}
+.strip-col ul{margin:0;padding-left:1.05rem} .strip-col li{font-size:.86rem;color:var(--dim);line-height:1.7;margin:.2rem 0}
 .call b{display:block;font-family:var(--disp);color:var(--sugi);font-size:.95rem;margin-bottom:.45rem}
 .call ul{margin:0;padding-left:1.05rem}
 .call li{font-size:.89rem;color:var(--dim);margin:.28rem 0;line-height:1.75}
@@ -310,20 +318,36 @@ tr.total th,tr.total td{background:var(--gold-soft);color:var(--gold);font-weigh
 
 <nav>
   <div class="nav-in">
+    <a href="#summary">あらまし</a>
     <a href="#intro">この旅について</a>
     <a href="#d1" class="n1">1日目 農園</a>
     <a href="#d2" class="n2">2日目 公園</a>
     <a href="#farm">農園の料金</a>
-    <a href="#fixes">変えたところ</a>
-    <a href="#money">見積</a>
+    <a href="#bath" class="n2">お風呂</a>
+    <a href="#money">お金</a>
     <a href="#pack">持ち物</a>
-    <a href="#todo">やること</a>
-    <a href="#plan2" class="n2">2日目の決定</a>
     <a href="#tel">連絡先</a>
+    <a href="#memo">幹事メモ</a>
   </div>
 </nav>
 
 <main>
+
+<section id="summary">
+  <div class="ch"><span class="num">要</span><h2>旅のあらまし</h2></div>
+  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">このページだけ読めば、全体が分かります。</p>
+  ${tableHtml(['項目', '内容'], D.SUMMARY.facts)}
+  <div class="strip">
+    <div class="strip-col d1"><b>1日目　9/21（月・敬老の日）</b><ul>${D.SUMMARY.day1.map((l) => `<li>${esc(l)}</li>`).join('')}</ul></div>
+    <div class="strip-col d2"><b>2日目　9/22（火・国民の休日）</b><ul>${D.SUMMARY.day2.map((l) => `<li>${esc(l)}</li>`).join('')}</ul></div>
+  </div>
+  <h3>当日の電話番号</h3>
+  <div class="tel">
+    ${D.SUMMARY.phones.map(([nm, no]) => (/^\d/.test(no) ? `<a href="tel:${no.replace(/-/g, '')}"><span class="nm">${esc(nm)}</span><span class="no">${esc(no)}</span></a>`
+      : `<a><span class="nm">${esc(nm)}</span><span class="no">${esc(no)}</span></a>`)).join('')}
+  </div>
+  <div class="call"><b>大事なことだけ</b><ul>${D.SUMMARY.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+</section>
 
 <section id="intro">
   <div class="ch"><span class="num">Ⅰ</span><h2>この旅について</h2></div>
@@ -346,13 +370,9 @@ tr.total th,tr.total td{background:var(--gold-soft);color:var(--gold);font-weigh
   ${tableHtml(D.BASIC.head, D.BASIC.rows)}
   <h3>(2) メンバー</h3>
   ${tableHtml(D.MEMBERS.head, D.MEMBERS.rows)}
-  <h3>(3) 特急ラビューの予約状況</h3>
+  <h3>(3) 特急ラビューの席</h3>
   ${tableHtml(D.TRAIN.head, D.TRAIN.rows)}
   <div class="call"><ul>${D.TRAIN.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-  <h3>子どもの運賃と特急料金</h3>
-  ${tableHtml(D.KIDS_FARE.head, D.KIDS_FARE.rows)}
-  <div class="call"><ul>${D.KIDS_FARE.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-
   <h3>(4) 座席の並び</h3>
   <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">席番はA・B・C・Dが、進行方向に向かって左から順に並びます。Aが左の窓側、Dが右の窓側です。</p>
   ${seatMapHtml(D.SEATS.out)}
@@ -408,106 +428,34 @@ ${DAYS.map((d) => `<section id="${d.key}">
   ${photo('cb_km_pamphlet', '小松沢レジャー農園「秋のぶどう狩りセット」（2026年6月版）')}
 </section>
 
-<section id="fixes">
-  <div class="ch"><span class="num">Ⅴ</span><h2>元のプランから変えたところ</h2></div>
-  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">
-    もとの計画書を各施設の公式サイトで確認したところ、いくつか事実が違っていました（確認日：2026年8月29日）。</p>
-  ${tableHtml(D.FIXES.head, D.FIXES.rows).replace('class="tw"', 'class="tw warn"')}
-</section>
-
-<section id="book">
-  <div class="ch"><span class="num">Ⅵ</span><h2>予約・購入が必要なもの</h2></div>
-  ${tableHtml(D.BOOKINGS.head, D.BOOKINGS.rows)}
+<section id="bath">
+  <div class="ch d2"><span class="num">Ⅴ</span><h2>お風呂のこと：樹音の湯と祭の湯</h2></div>
+  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">1日目の夜と2日目の朝は宿の「樹音の湯」、2日目の午後は西武秩父駅前の「祭の湯」に入ります。</p>
+  ${tableHtml(D.ONSEN.head, D.ONSEN.rows)}
+  <div class="call"><ul>${D.ONSEN.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+  ${photoPair('cb_pica_bath', 'cb_pica_sauna', '樹音の湯の大浴場（宿・無料）', '樹音の湯のサウナ')}
+  ${photoPair('cb_mat_rotenburo', 'cb_mat_bath', '祭の湯の露天風呂。武甲山を眺めながら', '祭の湯の内湯。炭酸泉やシルク湯があります')}
 </section>
 
 <section id="money">
-  <div class="ch"><span class="num">Ⅶ</span><h2>見積</h2></div>
+  <div class="ch"><span class="num">Ⅵ</span><h2>お金のこと</h2></div>
+  <h3>予約と購入の状況</h3>
+  ${tableHtml(D.BOOKINGS.head, D.BOOKINGS.rows)}
+  <h3>見積</h3>
   ${tableHtml(D.BUDGET.head, D.BUDGET.rows, { total: D.BUDGET.total })}
-  <div class="call"><ul>${D.BUDGET.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+  <div class="call gold"><ul>${D.BUDGET.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 </section>
 
 <section id="pack">
-  <div class="ch"><span class="num">Ⅷ</span><h2>持ち物・注意事項</h2></div>
+  <div class="ch"><span class="num">Ⅶ</span><h2>持ち物・注意事項</h2></div>
   <h3>持ち物</h3>
   <ol class="nums">${D.PACKING.map(([t, s]) => `<li><b>${esc(t)}</b>${s ? '　— ' + esc(s) : ''}</li>`).join('')}</ol>
   <h3>注意事項</h3>
   <ol class="nums warn">${D.CAUTIONS.map((t) => `<li>${esc(t)}</li>`).join('')}</ol>
 </section>
 
-<section id="todo">
-  <div class="ch"><span class="num">Ⅸ</span><h2>出発までにやること</h2></div>
-  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">上から順に片づければ、出発前日には何も残りません。</p>
-  ${tableHtml(D.TODO.head, D.TODO.rows).replace('class="tw"', 'class="tw warn"')}
-  <div class="call warn"><ul>${D.TODO.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-
-  <h3>電話で確認すること</h3>
-  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">農園への電話ついでに、まとめて聞いてしまうのが早いです。</p>
-  ${tableHtml(D.TOCHECK.head, D.TOCHECK.rows).replace('class="tw"', 'class="tw warn"')}
-  <h3>確認が取れたもの</h3>
-  ${tableHtml(D.TOCHECK.head, D.TOCHECK.resolved)}
-</section>
-
-<section id="plan2">
-  <div class="ch d2"><span class="num">Ⅹ</span><h2>2日目をこう決めました</h2></div>
-  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">復路を ちちぶ40号（16:24発）に変更しました。そこに至るまでに調べたことの記録です。</p>
-
-  <h3>(1) 特急券は変更できるのか</h3>
-  ${tableHtml(D.TICKET_RULES.head, D.TICKET_RULES.rows)}
-  <div class="call"><ul>${D.TICKET_RULES.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-
-  <h3>(2) 復路の候補</h3>
-  ${tableHtml(D.RETURN_TRAINS.head, D.RETURN_TRAINS.rows)}
-  <div class="call"><ul>${D.RETURN_TRAINS.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-
-  <h3>(3) 樹音の湯と祭の湯はどう違うか</h3>
-  ${tableHtml(D.ONSEN.head, D.ONSEN.rows)}
-  ${photoPair('cb_mat_rotenburo', 'cb_mat_bath', '露天風呂。武甲山を眺めながら入れます', '内湯。高濃度人工炭酸泉やシルク湯があります')}
-  <div class="call"><ul>${D.ONSEN.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-
-  <h3>(4) 2日目に足せるもの</h3>
-  ${tableHtml(D.DAY2_EXTRA.head, D.DAY2_EXTRA.rows)}
-  <div class="call"><ul>${D.DAY2_EXTRA.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-
-  <h3>(5) SLは乗るか、見るか</h3>
-  ${tableHtml(D.SL.head, D.SL.rows)}
-  <div class="call"><ul>${D.SL.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-
-  <h3>(6) 秩父漫遊きっぷ</h3>
-  ${tableHtml(D.MANYU.head, D.MANYU.rows)}
-  <div class="call gold"><ul>${D.MANYU.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-
-  <h3>(7) 復路をどれにするか</h3>
-  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">ぐるりん号で西武秩父駅に着くのが13:17です。そこから発車までの持ち時間から、下の101分を引いた残りが温泉に回せます。</p>
-  ${tableHtml(D.TIME_BUDGET.fixed.head, D.TIME_BUDGET.fixed.rows)}
-  ${tableHtml(D.TIME_BUDGET.head, D.TIME_BUDGET.rows)}
-  <div class="call"><ul>${D.TIME_BUDGET.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-
-  <h3>(8) 展望ちびっこ広場は本当に刺さるか</h3>
-  ${tableHtml(D.PLAYGROUND.head, D.PLAYGROUND.rows)}
-  <div class="call gold"><ul>${D.PLAYGROUND.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-
-  <h3>(10) 長瀞ラインくだりを入れる場合</h3>
-  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">午前のミューズパークを長瀞に差し替える案です。復路の16:24発と祭の湯の85分は変えずに収まります。</p>
-  ${photo('map_day2_nagatoro', '長瀞はミューズパークと反対の北方向。秩父駅から秩父鉄道で約20分です')}
-  ${photoPair('cb_nag_boat', 'cb_nag_rapids', '長瀞ラインくだり。全員ライフジャケットを着けます', 'AコースにもBコースにも急流のポイントがあります')}
-  ${tableHtml(D.NAGATORO.head, D.NAGATORO.rows)}
-  <div class="call"><ul>${D.NAGATORO.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-  <h3>長瀞に行く場合の2日目</h3>
-  ${tableHtml(D.NAGATORO_PLAN.head, D.NAGATORO_PLAN.rows)}
-  ${tableHtml(D.NAGATORO_PLAN.fallback.head, D.NAGATORO_PLAN.fallback.rows).replace('class="tw"', 'class="tw warn"')}
-  ${tableHtml(D.NAGATORO_PLAN.earlier.head, D.NAGATORO_PLAN.earlier.rows)}
-  <div class="call"><ul>${D.NAGATORO_PLAN.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-  <h3>長瀞に行くか、今のままか</h3>
-  ${tableHtml(D.NAGATORO_TRADEOFF.head, D.NAGATORO_TRADEOFF.rows)}
-  <div class="call warn"><ul>${D.NAGATORO_TRADEOFF.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-
-  <h3>(9) 決まったこと</h3>
-  ${tableHtml(D.PROPOSAL.head, D.PROPOSAL.rows).replace('class="tw"', 'class="tw warn"')}
-  <div class="call warn"><ul>${D.PROPOSAL.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
-</section>
-
 <section id="tel">
-  <div class="ch"><span class="num">Ⅺ</span><h2>連絡先</h2></div>
+  <div class="ch"><span class="num">Ⅷ</span><h2>連絡先</h2></div>
   <div class="tel">
     ${D.CONTACTS.rows.map(([nm, no, sub]) => `<a href="tel:${no.replace(/-/g, '')}">
       <span class="nm">${esc(nm)}${sub ? `<span class="sub">${esc(sub)}</span>` : ''}</span>
@@ -516,10 +464,56 @@ ${DAYS.map((d) => `<section id="${d.key}">
   <p class="foot">タップでそのまま電話できます。</p>
 </section>
 
+<section id="memo">
+  <div class="ch warn"><span class="num">付A</span><h2>幹事メモ　── パパが使うページ</h2></div>
+  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">ここから先は手配と判断の記録です。家族のみなさんは読み飛ばして構いません。</p>
+
+  <h3>(1) 出発までにやること</h3>
+  ${tableHtml(D.TODO.head, D.TODO.rows).replace('class="tw"', 'class="tw warn"')}
+  <div class="call warn"><ul>${D.TODO.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(2) 電話で確認すること</h3>
+  ${tableHtml(D.TOCHECK.head, D.TOCHECK.rows).replace('class="tw"', 'class="tw warn"')}
+
+  <h3>(3) 特急券のルール（Smooz）</h3>
+  ${tableHtml(D.TICKET_RULES.head, D.TICKET_RULES.rows)}
+  <div class="call"><ul>${D.TICKET_RULES.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(4) 子どもの運賃と特急料金</h3>
+  ${tableHtml(D.KIDS_FARE.head, D.KIDS_FARE.rows)}
+  <div class="call"><ul>${D.KIDS_FARE.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(5) 秩父漫遊きっぷ</h3>
+  ${tableHtml(D.MANYU.head, D.MANYU.rows)}
+  <div class="call gold"><ul>${D.MANYU.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(6) 復路を16:24発にした理由</h3>
+  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">ぐるりん号で西武秩父駅に着くのが13:17。そこから発車までの持ち時間から、下の101分を引いた残りが温泉に回せます。</p>
+  ${tableHtml(D.TIME_BUDGET.fixed.head, D.TIME_BUDGET.fixed.rows)}
+  ${tableHtml(D.TIME_BUDGET.head, D.TIME_BUDGET.rows)}
+  <div class="call"><ul>${D.TIME_BUDGET.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
+  <h3>(7) 検討して見送ったこと</h3>
+  ${tableHtml(D.DECIDED_AGAINST.head, D.DECIDED_AGAINST.rows).replace('class="tw"', 'class="tw warn"')}
+
+  <h3>(8) 展望ちびっこ広場の遊具は2人に合うか</h3>
+  ${tableHtml(D.PLAYGROUND.head, D.PLAYGROUND.rows)}
+  <div class="call gold"><ul>${D.PLAYGROUND.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+</section>
+
+<section id="fixes">
+  <div class="ch warn"><span class="num">付B</span><h2>元のプランから変えたところ</h2></div>
+  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">
+    もとの計画書を各施設の公式サイトで確認したところ、いくつか事実が違っていました（確認日：2026年8月29日）。</p>
+  ${tableHtml(D.FIXES.head, D.FIXES.rows).replace('class="tw"', 'class="tw warn"')}
+  <h3>しおり作成時点で確認が取れたこと</h3>
+  ${tableHtml(D.TOCHECK.head, D.TOCHECK.resolved)}
+</section>
+
 <section id="cred">
-  <div class="ch"><span class="num">付</span><h2>写真と地図について</h2></div>
+  <div class="ch"><span class="num">付C</span><h2>写真と地図について</h2></div>
   <p class="ld" style="font-size:.83rem;color:var(--dim);margin:.4rem 0 .6rem">
-    髙山家4人のための私的な文書です。施設の写真は各施設の公式サイト、特急・山・駅・食べ物などはウィキメディア・コモンズ、地図2枚は OpenStreetMap から作りました。</p>
+    髙山家6人のための私的な文書です。施設の写真は各施設の公式サイト、特急・山・駅・食べ物などはウィキメディア・コモンズ、地図2枚は OpenStreetMap から作りました。</p>
   <h3>各施設の公式サイト</h3>
   ${tableHtml(['ファイル', '提供', '出所'], creditRows('official'))}
   <h3>ウィキメディア・コモンズ</h3>
@@ -531,7 +525,7 @@ ${DAYS.map((d) => `<section id="${d.key}">
 
 <div class="end">
   <p class="l1">それでは、9月21日 7時45分に出発です。</p>
-  <p class="l2">作成：髙山浩和　／　2026年9月5日　ver.03</p>
+  <p class="l2">作成：髙山浩和　／　2026年9月10日　ver.04</p>
 </div>
 
 </main>

@@ -784,25 +784,11 @@
   "source": "osm",
   "page": "https://www.openstreetmap.org/copyright"
  },
- "cb_nag_boat": {
-  "file": "19th-n-02.jpg",
-  "artist": "秩父鉄道 長瀞ラインくだり",
-  "lic": "公式サイト",
-  "source": "official",
-  "page": "https://www.chichibu-railway.co.jp/nagatoro/boat.html"
- },
- "cb_nag_rapids": {
-  "file": "linekudaribanner_spring.jpg（右半分を切り出し）",
-  "artist": "秩父鉄道 長瀞ラインくだり",
-  "lic": "公式サイト",
-  "source": "official",
-  "page": "https://www.chichibu-railway.co.jp/nagatoro/boat.html"
- },
- "map_day2_nagatoro": {
-  "file": "map_day2_nagatoro.jpg",
-  "artist": "OpenStreetMap contributors",
-  "lic": "ODbL",
-  "source": "osm",
-  "page": "https://www.openstreetmap.org/copyright"
+ "cb_sl_paleo": {
+  "file": "File:Chichibu C58-363.jpg",
+  "artist": "MaedaAkihiko",
+  "lic": "CC BY-SA 4.0",
+  "source": "commons",
+  "page": "https://commons.wikimedia.org/wiki/File:Chichibu_C58-363.jpg"
  }
 }

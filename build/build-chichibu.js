@@ -124,7 +124,40 @@ function cover() {
   out.push(table([new TableRow({ children: cards })], { cols: [cw, gap, cw, gap, cw] }));
 
   out.push(spacer(230));
-  out.push(P('作成：髙山浩和　／　2026年9月5日　ver.03', { size: 17, color: C.muted, align: AlignmentType.CENTER, after: 0, line: 250 }));
+  out.push(P('作成：髙山浩和　／　2026年9月10日　ver.04', { size: 17, color: C.muted, align: AlignmentType.CENTER, after: 0, line: 250 }));
+  out.push(pageBreak());
+  return out;
+}
+
+// ═══════════════════════════════════════════════════════════
+//  旅のあらまし（1ページ）
+// ═══════════════════════════════════════════════════════════
+function summary() {
+  const out = [];
+  out.push(...chapter('要', '旅のあらまし　── このページだけ読めば分かります'));
+  out.push(dataTable(['項目', '内容'], D.SUMMARY.facts, [1900, 7846], { color: C.brand }));
+  out.push(spacer(170));
+
+  const col = (title, lines, key) => {
+    const pal = { d1: [C.d1, C.d1bg], d2: [C.d2, C.d2bg] }[key];
+    return cell([
+      P(title, { size: 19, bold: true, color: pal[0], after: 70, line: 250 }),
+      ...lines.map((l, i) => P([run('・', { color: pal[0], bold: true, size: 17 }), run(l, { color: C.ink2, size: 17 })],
+        { indent: { left: 120, hanging: 190 }, after: i === lines.length - 1 ? 0 : 50, line: 250 })),
+    ], { w: (CONTENT_DXA - 160) / 2, fill: pal[1], mt: 130, mb: 130, ml: 170, mr: 140,
+      borders: { top: line(pal[0], 14), left: none, right: none, bottom: none } });
+  };
+  out.push(table([new TableRow({ children: [
+    col('1日目　9/21（月・敬老の日）', D.SUMMARY.day1, 'd1'),
+    cell(P('', { after: 0 }), { w: 160, ml: 0, mr: 0 }),
+    col('2日目　9/22（火・国民の休日）', D.SUMMARY.day2, 'd2'),
+  ] })], { cols: [(CONTENT_DXA - 160) / 2, 160, (CONTENT_DXA - 160) / 2] }));
+  out.push(spacer(170));
+
+  out.push(P('当日の電話番号', { size: 19, bold: true, color: C.brandMid, after: 80, line: 260 }));
+  out.push(dataTable(['連絡先', '電話番号'], D.SUMMARY.phones, [3400, 6346], { color: C.brandMid }));
+  out.push(spacer(140));
+  out.push(noteBox(D.SUMMARY.notes, { color: C.brand, bg: C.brandBg, title: '大事なことだけ' }));
   out.push(pageBreak());
   return out;
 }
@@ -139,7 +172,7 @@ function chapter1() {
   out.push(noteBox([
     '9月21日は敬老の日、22日は国民の休日。どちらも祝日なので電車は土休日ダイヤです。',
     '小松沢レジャー農園は、営業カレンダー上どちらの日も開いています（ぶどう狩り可・お食事処営業）。',
-    '宿のPICA秩父は支払済み。当日いちばん読めないのは、農園からPICAへのタクシーです。',
+    '宿のPICA秩父と特急券は支払い済み。当日の現金の出番は、農園・タクシー・祭の湯です。',
   ], { title: 'まず、この3つ', color: C.brand, bg: C.brandBg }));
   out.push(spacer(160));
 
@@ -149,15 +182,10 @@ function chapter1() {
   out.push(sub('(2) メンバー'));
   out.push(dataTable(D.MEMBERS.head, D.MEMBERS.rows, [1900, 1500, 6346], { color: C.brand }));
 
-  out.push(sub('(3) 特急ラビューの予約状況'));
+  out.push(sub('(3) 特急ラビューの席'));
   out.push(dataTable(D.TRAIN.head, D.TRAIN.rows, [1900, 4200, 1500, 2146], { color: C.d1, firstFill: C.d1bg }));
   out.push(spacer(130));
   out.push(noteBox(D.TRAIN.notes, { color: C.d1, bg: C.d1bg }));
-  out.push(spacer(170));
-  out.push(P('子どもの運賃と特急料金', { size: 19, bold: true, color: C.brandMid, after: 80, line: 260 }));
-  out.push(dataTable(D.KIDS_FARE.head, D.KIDS_FARE.rows, [2900, 6846], { color: C.brandMid }));
-  out.push(spacer(130));
-  out.push(noteBox(D.KIDS_FARE.notes, { color: C.brandMid, bg: C.brandBg }));
 
   out.push(pageBreak());
   out.push(sub('(4) 座席の並び'));
@@ -238,170 +266,61 @@ function chapterFarm() {
 // ═══════════════════════════════════════════════════════════
 //  Ⅴ. 元プランからの変更
 // ═══════════════════════════════════════════════════════════
-function chapterFixes() {
+function chapterBath() {
   const out = [];
-  out.push(...chapter('Ⅴ', '元のプランから変えたところ', { color: C.alert, bg: C.alertBg }));
-  out.push(P('もとの計画書を各施設の公式サイトで確認したところ、いくつか事実が違っていました。'
-    + 'ここに全部並べておきます（確認日：2026年8月29日）。',
-  { size: 18, color: C.ink2, after: 130, line: 265 }));
-  out.push(dataTable(D.FIXES.head, D.FIXES.rows, [2300, 3200, 4246], { color: C.alert, firstFill: C.alertBg }));
-  out.push(pageBreak());
-  return out;
-}
-
-// ═══════════════════════════════════════════════════════════
-//  Ⅵ〜Ⅹ
-// ═══════════════════════════════════════════════════════════
-function rest() {
-  const out = [];
-
-  out.push(...chapter('Ⅵ', '予約・購入が必要なもの'));
-  out.push(dataTable(D.BOOKINGS.head, D.BOOKINGS.rows, [3200, 2000, 4546], { color: C.brand }));
-  out.push(spacer(230));
-
-  out.push(...chapter('Ⅶ', '見積'));
-  out.push(dataTable(D.BUDGET.head, D.BUDGET.rows, [3700, 2200, 3846],
-    { color: C.gold, total: D.BUDGET.total, firstFill: C.goldBg, totalFill: C.goldBg }));
-  out.push(spacer(140));
-  out.push(noteBox(D.BUDGET.notes, { color: C.gold, bg: C.goldBg }));
-  out.push(pageBreak());
-
-  out.push(...chapter('Ⅷ', '持ち物・注意事項'));
-  out.push(sub('(1) 持ち物'));
-  D.PACKING.forEach(([t, s], i) => {
-    out.push(P([
-      run(circled[i] + '　', { size: 19, bold: true, color: C.brandMid }),
-      run(t, { size: 19, bold: true, color: C.ink }),
-      run(s ? '　— ' + s : '', { size: 17, color: C.ink2 }),
-    ], { after: 60, line: 265, indent: { left: 300, hanging: 300 } }));
-  });
-  out.push(sub('(2) 注意事項'));
-  D.CAUTIONS.forEach((t, i) => {
-    out.push(P([
-      run(circled[i] + '　', { size: 19, bold: true, color: C.d1 }),
-      run(t, { size: 18, color: C.ink2 }),
-    ], { after: 60, line: 265, indent: { left: 300, hanging: 300 } }));
-  });
-  out.push(pageBreak());
-
-  out.push(...chapter('Ⅸ', '出発までにやること'));
-
-  out.push(sub('(1) 日付つきのやることリスト', C.alert));
-  out.push(P('上から順に片づければ、出発前日には何も残りません。',
-    { size: 18, color: C.ink2, after: 120, line: 265 }));
-  out.push(dataTable(D.TODO.head, D.TODO.rows, [1900, 3300, 4546], { color: C.alert, firstFill: C.alertBg }));
-  out.push(spacer(140));
-  out.push(noteBox(D.TODO.notes, { color: C.alert, bg: C.alertBg }));
-  out.push(pageBreak());
-
-  out.push(sub('(2) 電話で確認すること', C.alert));
-  out.push(P('電話で聞けばすぐ済むものばかりです。農園への電話ついでに、まとめて聞いてしまうのが早いです。',
-    { size: 18, color: C.ink2, after: 120, line: 265 }));
-  out.push(dataTable(D.TOCHECK.head, D.TOCHECK.rows, [2600, 4400, 2746], { color: C.alert, firstFill: C.alertBg }));
-  out.push(spacer(200));
-  out.push(sub('(3) しおり作成時点で確認が取れたもの'));
-  out.push(dataTable(D.TOCHECK.head, D.TOCHECK.resolved, [2600, 4400, 2746], { color: C.brand, firstFill: C.brandBg }));
-  out.push(pageBreak());
-
-  // ── Ⅹ. 2日目をどうするか ─────────────────────────────
-  out.push(...chapter('Ⅹ', '2日目をこう決めました', { color: C.d2, bg: C.d2bg }));
-  out.push(P('復路を ちちぶ40号（16:24発）に変更しました。そこに至るまでに調べたことを、記録として残しておきます。',
+  out.push(...chapter('Ⅴ', 'お風呂のこと：樹音の湯と祭の湯', { color: C.d2, bg: C.d2bg }));
+  out.push(P('この旅ではお風呂に2か所入ります。1日目の夜と2日目の朝は宿の「樹音の湯」、2日目の午後は西武秩父駅前の「祭の湯」です。',
     { size: 18, color: C.ink2, after: 130, line: 265 }));
-
-  out.push(sub('(1) 特急券は変更できるのか', C.d2));
-  out.push(dataTable(D.TICKET_RULES.head, D.TICKET_RULES.rows, [2600, 7146], { color: C.d2, firstFill: C.d2bg }));
-  out.push(spacer(130));
-  out.push(noteBox(D.TICKET_RULES.notes, { color: C.d2, bg: C.d2bg }));
-
-  out.push(sub('(2) 復路の候補', C.d2));
-  out.push(dataTable(D.RETURN_TRAINS.head, D.RETURN_TRAINS.rows, [2300, 1250, 1150, 1350, 3696],
-    { color: C.d2, firstFill: C.d2bg }));
-  out.push(spacer(130));
-  out.push(noteBox(D.RETURN_TRAINS.notes, { color: C.d2, bg: C.d2bg }));
-  out.push(pageBreak());
-
-  out.push(sub('(3) 樹音の湯と祭の湯はどう違うか', C.d2));
   out.push(dataTable(D.ONSEN.head, D.ONSEN.rows, [1700, 3100, 4946], { color: C.d2, firstFill: C.d2bg, centerHead: true }));
   out.push(spacer(130));
   out.push(noteBox(D.ONSEN.notes, { color: C.d2, bg: C.d2bg }));
   out.push(spacer(150));
-  out.push(figurePair('cb_mat_rotenburo', 'cb_mat_bath',
-    '露天風呂。武甲山を眺めながら入れます', '内湯。高濃度人工炭酸泉やシルク湯があります'));
+  out.push(figurePair('cb_mat_rotenburo', 'cb_mat_bath', '祭の湯の露天風呂。武甲山を眺めながら', '祭の湯の内湯。炭酸泉やシルク湯があります'));
   out.push(pageBreak());
+  return out;
+}
 
-  out.push(sub('(4) 2日目に足せるもの', C.d2));
-  out.push(dataTable(D.DAY2_EXTRA.head, D.DAY2_EXTRA.rows, [1900, 3000, 1500, 3346], { color: C.d2, firstFill: C.d2bg }));
+function chapterMoney() {
+  const out = [];
+  out.push(...chapter('Ⅵ', 'お金のこと'));
+  out.push(sub('(1) 予約と購入の状況'));
+  out.push(dataTable(D.BOOKINGS.head, D.BOOKINGS.rows, [3200, 2000, 4546], { color: C.brand }));
+  out.push(spacer(200));
+  out.push(sub('(2) 見積'));
+  out.push(dataTable(D.BUDGET.head, D.BUDGET.rows, [3700, 2200, 3846],
+    { color: C.gold, firstFill: C.goldBg, total: D.BUDGET.total }));
   out.push(spacer(130));
-  out.push(noteBox(D.DAY2_EXTRA.notes, { color: C.d2, bg: C.d2bg }));
-
-  out.push(sub('(5) SLは乗るか、見るか', C.d2));
-  out.push(dataTable(D.SL.head, D.SL.rows, [2400, 7346], { color: C.d2, firstFill: C.d2bg }));
-  out.push(spacer(130));
-  out.push(noteBox(D.SL.notes, { color: C.d2, bg: C.d2bg }));
-
-  out.push(sub('(6) 秩父漫遊きっぷ', C.gold));
-  out.push(dataTable(D.MANYU.head, D.MANYU.rows, [2400, 7346], { color: C.gold, firstFill: C.goldBg }));
-  out.push(spacer(130));
-  out.push(noteBox(D.MANYU.notes, { color: C.gold, bg: C.goldBg }));
+  out.push(noteBox(D.BUDGET.notes, { color: C.gold, bg: C.goldBg }));
   out.push(pageBreak());
+  return out;
+}
 
-  out.push(sub('(7) 復路をどれにするか', C.d2));
-  out.push(P('ぐるりん号で西武秩父駅に着くのが13:17です。そこから発車までの持ち時間から、下の101分を引いた残りが温泉に回せます。',
-    { size: 18, color: C.ink2, after: 120, line: 265 }));
-  out.push(dataTable(D.TIME_BUDGET.fixed.head, D.TIME_BUDGET.fixed.rows, [5400, 4346],
-    { color: C.brandMid, firstFill: C.brandBg }));
-  out.push(spacer(180));
-  out.push(dataTable(D.TIME_BUDGET.head, D.TIME_BUDGET.rows, [2200, 1150, 1350, 1800, 3246],
-    { color: C.d2, firstFill: C.d2bg }));
-  out.push(spacer(130));
-  out.push(noteBox(D.TIME_BUDGET.notes, { color: C.d2, bg: C.d2bg }));
+function chapterPack() {
+  const out = [];
+  out.push(...chapter('Ⅶ', '持ち物・注意事項'));
+  out.push(sub('(1) 持ち物'));
+  D.PACKING.forEach(([t, note], i) => {
+    out.push(P([
+      run(circled[i] + ' ', { color: C.brand, bold: true, size: 19 }),
+      run(t, { color: C.ink, bold: true, size: 19 }),
+      run(note ? '　— ' + note : '', { color: C.ink2, size: 17 }),
+    ], { after: 70, line: 265, indent: { left: 300, hanging: 300 } }));
+  });
+  out.push(sub('(2) 注意事項', C.alert));
+  D.CAUTIONS.forEach((t, i) => {
+    out.push(P([
+      run(circled[i] + ' ', { color: C.alert, bold: true, size: 19 }),
+      run(t, { color: C.ink2, size: 18 }),
+    ], { after: 60, line: 265, indent: { left: 300, hanging: 300 } }));
+  });
   out.push(pageBreak());
+  return out;
+}
 
-  out.push(sub('(8) 展望ちびっこ広場は本当に刺さるか', C.gold));
-  out.push(dataTable(D.PLAYGROUND.head, D.PLAYGROUND.rows, [2700, 3600, 3446],
-    { color: C.gold, firstFill: C.goldBg, centerHead: true }));
-  out.push(spacer(130));
-  out.push(noteBox(D.PLAYGROUND.notes, { color: C.gold, bg: C.goldBg }));
-  out.push(pageBreak());
-
-  out.push(sub('(10) 長瀞ラインくだりを入れる場合', C.d2));
-  out.push(P('午前のミューズパークを長瀞に差し替える案です。復路の16:24発と祭の湯の85分は変えずに収まります。',
-    { size: 18, color: C.ink2, after: 120, line: 265 }));
-  out.push(...figure('map_day2_nagatoro', 4.4, '長瀞はミューズパークと反対の北方向。秩父駅から秩父鉄道で約20分です', { maxH: 5.6 }));
-  out.push(spacer(120));
-  out.push(figurePair('cb_nag_boat', 'cb_nag_rapids',
-    '長瀞ラインくだり。全員ライフジャケットを着けます', 'AコースにもBコースにも急流のポイントがあります'));
-  out.push(spacer(150));
-  out.push(dataTable(D.NAGATORO.head, D.NAGATORO.rows, [2100, 7646], { color: C.d2, firstFill: C.d2bg }));
-  out.push(spacer(130));
-  out.push(noteBox(D.NAGATORO.notes, { color: C.d2, bg: C.d2bg }));
-  out.push(pageBreak());
-
-  out.push(P('長瀞に行く場合の2日目', { size: 19, bold: true, color: C.d2, after: 80, line: 260 }));
-  out.push(dataTable(D.NAGATORO_PLAN.head, D.NAGATORO_PLAN.rows, [1300, 3900, 4546], { color: C.d2, firstFill: C.d2bg }));
-  out.push(spacer(160));
-  out.push(dataTable(D.NAGATORO_PLAN.fallback.head, D.NAGATORO_PLAN.fallback.rows, [2400, 7346], { color: C.alert, firstFill: C.alertBg }));
-  out.push(spacer(160));
-  out.push(dataTable(D.NAGATORO_PLAN.earlier.head, D.NAGATORO_PLAN.earlier.rows, [2400, 7346], { color: C.brandMid, firstFill: C.brandBg }));
-  out.push(spacer(130));
-  out.push(noteBox(D.NAGATORO_PLAN.notes, { color: C.d2, bg: C.d2bg }));
-  out.push(pageBreak());
-
-  out.push(P('長瀞に行くか、今のままか', { size: 19, bold: true, color: C.d2, after: 80, line: 260 }));
-  out.push(dataTable(D.NAGATORO_TRADEOFF.head, D.NAGATORO_TRADEOFF.rows, [1700, 3900, 4146], { color: C.d2, firstFill: C.d2bg, centerHead: true }));
-  out.push(spacer(130));
-  out.push(noteBox(D.NAGATORO_TRADEOFF.notes, { color: C.alert, bg: C.alertBg }));
-  out.push(pageBreak());
-
-  out.push(sub('(9) 決まったこと', C.brand));
-  out.push(dataTable(D.PROPOSAL.head, D.PROPOSAL.rows, [2400, 7346], { color: C.brand, firstFill: C.brandBg }));
-  out.push(spacer(130));
-  out.push(noteBox(D.PROPOSAL.notes, { color: C.brand, bg: C.brandBg }));
-  out.push(pageBreak());
-
-  out.push(...chapter('Ⅺ', '連絡先'));
+function chapterTel() {
+  const out = [];
+  out.push(...chapter('Ⅷ', '連絡先'));
   out.push(dataTable(D.CONTACTS.head, D.CONTACTS.rows, [3400, 2300, 4046], { color: C.brand }));
-
   out.push(spacer(260));
   out.push(table([new TableRow({
     children: [cell([
@@ -409,7 +328,76 @@ function rest() {
       P('作成：髙山浩和', { size: 17, color: C.white, align: AlignmentType.CENTER, after: 0, line: 250 }),
     ], { w: CONTENT_DXA, fill: C.brand, mt: 200, mb: 200 })],
   })], { cols: [CONTENT_DXA] }));
+  out.push(pageBreak());
   return out;
+}
+
+// ═══════════════════════════════════════════════════════════
+//  付録A 幹事メモ ／ 付録B 変えたところ
+// ═══════════════════════════════════════════════════════════
+function appendixA() {
+  const out = [];
+  out.push(...chapter('付A', '幹事メモ　── パパが使うページ', { color: C.alert, bg: C.alertBg }));
+  out.push(P('ここから先は手配と判断の記録です。家族のみなさんは読み飛ばして構いません。',
+    { size: 18, color: C.ink2, after: 130, line: 265 }));
+
+  out.push(sub('(1) 出発までにやること', C.alert));
+  out.push(dataTable(D.TODO.head, D.TODO.rows, [1900, 3300, 4546], { color: C.alert, firstFill: C.alertBg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.TODO.notes, { color: C.alert, bg: C.alertBg }));
+  out.push(pageBreak());
+
+  out.push(sub('(2) 電話で確認すること', C.alert));
+  out.push(dataTable(D.TOCHECK.head, D.TOCHECK.rows, [2600, 4400, 2746], { color: C.alert, firstFill: C.alertBg }));
+  out.push(spacer(200));
+  out.push(sub('(3) 特急券のルール（Smooz）', C.d2));
+  out.push(dataTable(D.TICKET_RULES.head, D.TICKET_RULES.rows, [2600, 7146], { color: C.d2, firstFill: C.d2bg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.TICKET_RULES.notes, { color: C.d2, bg: C.d2bg }));
+  out.push(pageBreak());
+
+  out.push(sub('(4) 子どもの運賃と特急料金', C.brandMid));
+  out.push(dataTable(D.KIDS_FARE.head, D.KIDS_FARE.rows, [2900, 6846], { color: C.brandMid }));
+  out.push(spacer(130));
+  out.push(noteBox(D.KIDS_FARE.notes, { color: C.brandMid, bg: C.brandBg }));
+  out.push(spacer(170));
+  out.push(sub('(5) 秩父漫遊きっぷ', C.gold));
+  out.push(dataTable(D.MANYU.head, D.MANYU.rows, [2400, 7346], { color: C.gold, firstFill: C.goldBg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.MANYU.notes, { color: C.gold, bg: C.goldBg }));
+  out.push(pageBreak());
+
+  out.push(sub('(6) 復路を16:24発にした理由', C.d2));
+  out.push(P('ぐるりん号で西武秩父駅に着くのが13:17。そこから発車までの持ち時間から、下の101分を引いた残りが温泉に回せます。',
+    { size: 18, color: C.ink2, after: 120, line: 265 }));
+  out.push(dataTable(D.TIME_BUDGET.fixed.head, D.TIME_BUDGET.fixed.rows, [5400, 4346], { color: C.brandMid, firstFill: C.brandBg }));
+  out.push(spacer(160));
+  out.push(dataTable(D.TIME_BUDGET.head, D.TIME_BUDGET.rows, [2200, 1150, 1350, 1800, 3246], { color: C.d2, firstFill: C.d2bg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.TIME_BUDGET.notes, { color: C.d2, bg: C.d2bg }));
+  out.push(pageBreak());
+
+  out.push(sub('(7) 検討して見送ったこと', C.alert));
+  out.push(dataTable(D.DECIDED_AGAINST.head, D.DECIDED_AGAINST.rows, [2600, 7146], { color: C.alert, firstFill: C.alertBg }));
+  out.push(spacer(200));
+  out.push(sub('(8) 展望ちびっこ広場の遊具は2人に合うか', C.gold));
+  out.push(dataTable(D.PLAYGROUND.head, D.PLAYGROUND.rows, [2700, 3600, 3446], { color: C.gold, firstFill: C.goldBg, centerHead: true }));
+  out.push(spacer(130));
+  out.push(noteBox(D.PLAYGROUND.notes, { color: C.gold, bg: C.goldBg }));
+  out.push(pageBreak());
+  return out;
+}
+
+function appendixB() {
+  const out = [];
+  out.push(...chapter('付B', '元のプランから変えたところ', { color: C.alert, bg: C.alertBg }));
+  out.push(P('もとの計画書を各施設の公式サイトで確認したところ、いくつか事実が違っていました。ここに全部並べておきます（確認日：2026年8月29日）。',
+    { size: 18, color: C.ink2, after: 130, line: 265 }));
+  out.push(dataTable(D.FIXES.head, D.FIXES.rows, [2300, 3200, 4246], { color: C.alert, firstFill: C.alertBg }));
+  out.push(spacer(200));
+  out.push(sub('しおり作成時点で確認が取れたこと'));
+  out.push(dataTable(D.TOCHECK.head, D.TOCHECK.resolved, [2600, 4400, 2746], { color: C.brand, firstFill: C.brandBg }));
+  return out;   // credits() が自分で改ページするので、ここでは入れない（空白ページ防止）
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -427,8 +415,8 @@ function credits() {
   ['cb_mp_map', 'cb_km_calendar'].forEach((k) => used.add(k));
 
   out.push(pageBreak());
-  out.push(...chapter('付', '写真と地図について'));
-  out.push(P('このしおりは髙山家4人のための私的な文書です。写真と地図の出どころは3つあります。',
+  out.push(...chapter('付C', '写真と地図について'));
+  out.push(P('このしおりは髙山家6人のための私的な文書です。写真と地図の出どころは3つあります。',
     { size: 17, color: C.ink2, after: 110, line: 265 }));
   out.push(bullet('施設の写真（小松沢レジャー農園・PICA秩父・秩父ミューズパーク・祭の湯）は、各施設の公式サイトのものです。'));
   out.push(bullet('特急ラビュー、武甲山、駅、ぶどう、マス、ヤギなどはウィキメディア・コモンズの自由利用可能な画像です。'));
@@ -486,20 +474,19 @@ function build() {
             spacing: { before: 60, after: 0, line: 240 },
             border: { top: { ...line(C.hair, 4), space: 6 } },
             children: [
-              new TextRun({ text: '秩父ファミリー旅行しおり ver.03', font: FONT, size: 15, color: C.muted }),
+              new TextRun({ text: '秩父ファミリー旅行しおり ver.04', font: FONT, size: 15, color: C.muted }),
               new TextRun({ text: '\t', font: FONT, size: 15 }),
               new TextRun({ children: ['− ', PageNumber.CURRENT, ' −'], font: FONT, size: 15, color: C.muted }),
             ],
           })],
         }),
       },
-      children: [...cover(), ...chapter1(), ...days(), ...chapterFarm(),
-        ...chapterFixes(), ...rest(), ...credits()],
+      children: [...cover(), ...summary(), ...chapter1(), ...days(), ...chapterFarm(), ...chapterBath(), ...chapterMoney(), ...chapterPack(), ...chapterTel(), ...appendixA(), ...appendixB(), ...credits()],
     }],
   });
 
   fs.mkdirSync(OUT, { recursive: true });
-  const name = process.env.SHIORI_OUT || '秩父ファミリー旅行しおり_ver03.docx';
+  const name = process.env.SHIORI_OUT || '秩父ファミリー旅行しおり_ver04.docx';
   return Packer.toBuffer(doc).then((buf) => {
     const p = path.join(OUT, name);
     fs.writeFileSync(p, buf);

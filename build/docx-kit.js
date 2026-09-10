@@ -215,6 +215,7 @@ function makeKit(C, FONT, IMG) {
       d1: { main: C.d1, bg: C.d1bg, bg2: C.d1bg2 },
       d2: { main: C.d2, bg: C.d2bg, bg2: C.d2bg2 },
       d3: { main: C.d3, bg: C.d3bg, bg2: C.d3bg2 },
+      gold: { main: C.gold, bg: C.goldBg, bg2: C.goldBg },
     }[k];
   }
   
