@@ -486,6 +486,21 @@ ${DAYS.map((d) => `<section id="${d.key}">
   ${tableHtml(D.PLAYGROUND.head, D.PLAYGROUND.rows)}
   <div class="call gold"><ul>${D.PLAYGROUND.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
 
+  <h3>(10) 長瀞ラインくだりを入れる場合</h3>
+  <p class="ld" style="font-size:.88rem;color:var(--dim);margin:.4rem 0">午前のミューズパークを長瀞に差し替える案です。復路の16:24発と祭の湯の85分は変えずに収まります。</p>
+  ${photo('map_day2_nagatoro', '長瀞はミューズパークと反対の北方向。秩父駅から秩父鉄道で約20分です')}
+  ${photoPair('cb_nag_boat', 'cb_nag_rapids', '長瀞ラインくだり。全員ライフジャケットを着けます', 'AコースにもBコースにも急流のポイントがあります')}
+  ${tableHtml(D.NAGATORO.head, D.NAGATORO.rows)}
+  <div class="call"><ul>${D.NAGATORO.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+  <h3>長瀞に行く場合の2日目</h3>
+  ${tableHtml(D.NAGATORO_PLAN.head, D.NAGATORO_PLAN.rows)}
+  ${tableHtml(D.NAGATORO_PLAN.fallback.head, D.NAGATORO_PLAN.fallback.rows).replace('class="tw"', 'class="tw warn"')}
+  ${tableHtml(D.NAGATORO_PLAN.earlier.head, D.NAGATORO_PLAN.earlier.rows)}
+  <div class="call"><ul>${D.NAGATORO_PLAN.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+  <h3>長瀞に行くか、今のままか</h3>
+  ${tableHtml(D.NAGATORO_TRADEOFF.head, D.NAGATORO_TRADEOFF.rows)}
+  <div class="call warn"><ul>${D.NAGATORO_TRADEOFF.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+
   <h3>(9) 決まったこと</h3>
   ${tableHtml(D.PROPOSAL.head, D.PROPOSAL.rows).replace('class="tw"', 'class="tw warn"')}
   <div class="call warn"><ul>${D.PROPOSAL.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>

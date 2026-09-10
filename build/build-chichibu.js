@@ -364,6 +364,35 @@ function rest() {
   out.push(noteBox(D.PLAYGROUND.notes, { color: C.gold, bg: C.goldBg }));
   out.push(pageBreak());
 
+  out.push(sub('(10) 長瀞ラインくだりを入れる場合', C.d2));
+  out.push(P('午前のミューズパークを長瀞に差し替える案です。復路の16:24発と祭の湯の85分は変えずに収まります。',
+    { size: 18, color: C.ink2, after: 120, line: 265 }));
+  out.push(...figure('map_day2_nagatoro', 4.4, '長瀞はミューズパークと反対の北方向。秩父駅から秩父鉄道で約20分です', { maxH: 5.6 }));
+  out.push(spacer(120));
+  out.push(figurePair('cb_nag_boat', 'cb_nag_rapids',
+    '長瀞ラインくだり。全員ライフジャケットを着けます', 'AコースにもBコースにも急流のポイントがあります'));
+  out.push(spacer(150));
+  out.push(dataTable(D.NAGATORO.head, D.NAGATORO.rows, [2100, 7646], { color: C.d2, firstFill: C.d2bg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.NAGATORO.notes, { color: C.d2, bg: C.d2bg }));
+  out.push(pageBreak());
+
+  out.push(P('長瀞に行く場合の2日目', { size: 19, bold: true, color: C.d2, after: 80, line: 260 }));
+  out.push(dataTable(D.NAGATORO_PLAN.head, D.NAGATORO_PLAN.rows, [1300, 3900, 4546], { color: C.d2, firstFill: C.d2bg }));
+  out.push(spacer(160));
+  out.push(dataTable(D.NAGATORO_PLAN.fallback.head, D.NAGATORO_PLAN.fallback.rows, [2400, 7346], { color: C.alert, firstFill: C.alertBg }));
+  out.push(spacer(160));
+  out.push(dataTable(D.NAGATORO_PLAN.earlier.head, D.NAGATORO_PLAN.earlier.rows, [2400, 7346], { color: C.brandMid, firstFill: C.brandBg }));
+  out.push(spacer(130));
+  out.push(noteBox(D.NAGATORO_PLAN.notes, { color: C.d2, bg: C.d2bg }));
+  out.push(pageBreak());
+
+  out.push(P('長瀞に行くか、今のままか', { size: 19, bold: true, color: C.d2, after: 80, line: 260 }));
+  out.push(dataTable(D.NAGATORO_TRADEOFF.head, D.NAGATORO_TRADEOFF.rows, [1700, 3900, 4146], { color: C.d2, firstFill: C.d2bg, centerHead: true }));
+  out.push(spacer(130));
+  out.push(noteBox(D.NAGATORO_TRADEOFF.notes, { color: C.alert, bg: C.alertBg }));
+  out.push(pageBreak());
+
   out.push(sub('(9) 決まったこと', C.brand));
   out.push(dataTable(D.PROPOSAL.head, D.PROPOSAL.rows, [2400, 7346], { color: C.brand, firstFill: C.brandBg }));
   out.push(spacer(130));

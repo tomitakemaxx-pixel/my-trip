@@ -156,6 +156,9 @@ MATSURI_KAIKAN = (35.99721, 139.08527)
 CHICHIBU_STA = (35.99863, 139.08566)  # 秩父鉄道 秩父駅
 MICHINOEKI = (35.99732, 139.08846)
 KOEN_BASHI = (36.00176, 139.07556)    # 秩父公園橋（ぐるりん号が荒川を渡るところ）
+NAGATORO_STA = (36.09529, 139.11250)  # 長瀞駅（Overpass）
+IWADATAMI = (36.09468, 139.11578)     # 岩畳
+MINANO = (36.06863, 139.09396)        # 皆野駅
 
 RED, BLUE, GREEN, GOLD, INK = '#C0452B', '#2C5F8A', '#2F6B52', '#B5851F', '#17394F'
 
@@ -216,3 +219,14 @@ if __name__ == '__main__':
         lines=[(PICA, SPORTS), (SPORTS, MP_CENTER), (MP_CENTER, TABIDACHI),
                (TABIDACHI, KOEN_BASHI), (KOEN_BASHI, SEIBU_CHICHIBU)],
         title='2日目③　ぐるりん号の動線　パーク → 荒川を渡る → 西武秩父駅')
+    # ⑥ 2日目・長瀞に行く場合の動線（秩父鉄道で北へ）
+    #    西武秩父・御花畑・秩父の3駅は近すぎて z=13 ではラベルが重なるので、1つにまとめる
+    draw_map('map_day2_nagatoro', [
+        ('PICA秩父（泊）', *PICA, RED, 34),
+        ('秩父駅・御花畑駅', *CHICHIBU_STA, BLUE, -34),
+        ('長瀞駅・ラインくだり本部', *NAGATORO_STA, GOLD, -30),
+        ('岩畳', *IWADATAMI, GREEN, 28),
+    ], z=13, margin=(0.008, 0.012), soft=0.36, size=(1700, 1500),
+        lines=[(PICA, CHICHIBU_STA), (CHICHIBU_STA, NAGATORO_STA)],
+        title='2日目・長瀞案　秩父駅から秩父鉄道で約20分')
+
