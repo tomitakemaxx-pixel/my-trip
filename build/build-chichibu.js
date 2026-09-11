@@ -124,7 +124,7 @@ function cover() {
   out.push(table([new TableRow({ children: cards })], { cols: [cw, gap, cw, gap, cw] }));
 
   out.push(spacer(230));
-  out.push(P('作成：髙山浩和　／　2026年9月10日　ver.04', { size: 17, color: C.muted, align: AlignmentType.CENTER, after: 0, line: 250 }));
+  out.push(P('作成：髙山浩和　／　2026年9月11日　ver.04', { size: 17, color: C.muted, align: AlignmentType.CENTER, after: 0, line: 250 }));
   out.push(pageBreak());
   return out;
 }

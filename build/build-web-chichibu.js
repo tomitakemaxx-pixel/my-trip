@@ -525,7 +525,7 @@ ${DAYS.map((d) => `<section id="${d.key}">
 
 <div class="end">
   <p class="l1">それでは、9月21日 7時45分に出発です。</p>
-  <p class="l2">作成：髙山浩和　／　2026年9月10日　ver.04</p>
+  <p class="l2">作成：髙山浩和　／　2026年9月11日　ver.04</p>
 </div>
 
 </main>
