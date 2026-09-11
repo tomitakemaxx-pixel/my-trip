@@ -448,8 +448,11 @@ ${DAYS.map((d) => `<section id="${d.key}">
 
 <section id="pack">
   <div class="ch"><span class="num">Ⅶ</span><h2>持ち物・注意事項</h2></div>
+  <h3>宿とお風呂に置いてあるもの</h3>
+  ${tableHtml(D.PROVIDED.head, D.PROVIDED.rows)}
+  <div class="call gold"><ul>${D.PROVIDED.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
   <h3>持ち物</h3>
-  <ol class="nums">${D.PACKING.map(([t, s]) => `<li><b>${esc(t)}</b>${s ? '　— ' + esc(s) : ''}</li>`).join('')}</ol>
+  ${tableHtml(D.PACKING.head, D.PACKING.rows)}
   <h3>注意事項</h3>
   <ol class="nums warn">${D.CAUTIONS.map((t) => `<li>${esc(t)}</li>`).join('')}</ol>
 </section>

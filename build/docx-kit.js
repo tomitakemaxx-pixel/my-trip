@@ -152,7 +152,7 @@ function makeKit(C, FONT, IMG) {
     run(t, { color: o.textColor || C.ink2, size: o.size || 19 }),
   ], { indent: { left: o.left === undefined ? 120 : o.left, hanging: 200 }, after: o.after === undefined ? 55 : o.after, line: 260 });
   
-  const circled = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨'];
+  const circled = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩', '⑪', '⑫', '⑬', '⑭', '⑮', '⑯', '⑰', '⑱', '⑲', '⑳'];
   
   // ── 汎用テーブル ────────────────────────────────────────
   function dataTable(head, rows, cols, o = {}) {

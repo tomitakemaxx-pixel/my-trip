@@ -790,5 +790,15 @@
   "lic": "CC BY-SA 4.0",
   "source": "commons",
   "page": "https://commons.wikimedia.org/wiki/File:Chichibu_C58-363.jpg"
+ },
+ "cb_pica_room": {
+  "file": "03.jpg",
+  "artist": "PICA秩父",
+  "lic": "公式サイト",
+  "page": "https://www.pica-resort.jp/chichibu/stay/site/bbq_6.html",
+  "bytes": 91615,
+  "w": 1024,
+  "h": 768,
+  "source": "official"
  }
 }

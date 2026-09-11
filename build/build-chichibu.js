@@ -298,15 +298,15 @@ function chapterMoney() {
 function chapterPack() {
   const out = [];
   out.push(...chapter('Ⅶ', '持ち物・注意事項'));
-  out.push(sub('(1) 持ち物'));
-  D.PACKING.forEach(([t, note], i) => {
-    out.push(P([
-      run(circled[i] + ' ', { color: C.brand, bold: true, size: 19 }),
-      run(t, { color: C.ink, bold: true, size: 19 }),
-      run(note ? '　— ' + note : '', { color: C.ink2, size: 17 }),
-    ], { after: 70, line: 265, indent: { left: 300, hanging: 300 } }));
-  });
-  out.push(sub('(2) 注意事項', C.alert));
+  out.push(sub('(1) 宿とお風呂に置いてあるもの'));
+  out.push(dataTable(D.PROVIDED.head, D.PROVIDED.rows, [2100, 4200, 3446], { color: C.brand }));
+  out.push(spacer(160));
+  out.push(noteBox(D.PROVIDED.notes, { color: C.gold, bg: C.goldBg }));
+  out.push(spacer(200));
+  out.push(sub('(2) 持ち物'));
+  out.push(dataTable(D.PACKING.head, D.PACKING.rows, [2500, 2300, 4946], { color: C.brand }));
+  out.push(spacer(200));
+  out.push(sub('(3) 注意事項', C.alert));
   D.CAUTIONS.forEach((t, i) => {
     out.push(P([
       run(circled[i] + ' ', { color: C.alert, bold: true, size: 19 }),
