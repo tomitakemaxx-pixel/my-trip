@@ -296,3 +296,15 @@ Noto Sans CJK **SC**（簡体字）を選び、一部の漢字が中国語字形
 | 樹音の湯の料金とタオル | [PICA秩父 温浴（樹音の湯）](https://www.pica-resort.jp/chichibu/about/spa.html) |
 | 祭の湯の入館料・タオル・館内着 | [祭の湯 営業時間・料金](https://www.seibu-leisure.co.jp/matsuri/serviceguide/index.html) |
 | 祭の湯のアメニティ・ロッカー・乳幼児 | [祭の湯 よくある質問](https://www.seibu-leisure.co.jp/matsuri/faq/index.html) |
+
+### ver.04 追記その3（2026年9月18日）— LinkTrip「WeatherCover」の確認
+
+PICAの予約（09109477）に雨の補償「WeatherCover」が付いており、LinkTripから
+アクティベーションの案内が3通（8/31・9/11・9/18）届いていました。迷惑メールを疑って調べた結果、
+**本物**と判断し、幹事メモに記録しました。
+
+- 差出人の DKIM（`d=linktrip.co.jp` s1）・SPF・DMARC がすべて pass。リンク先も `activate.linktrip.co.jp` で
+  同じ登録ドメイン。類似ドメインや短縮URLの経由なし
+- メール記載の予約ID・施設名・保証対象日・金額（¥75,000 ＝ 支払額80,500円 − ビアサーバー5,500円）が
+  予約と一致。カードの利用通知にもLinkTripからの請求はなく、PICAへの80,500円のみ
+- 「やること」に **9/20までのアクティベーション** を追加し、「天気を見る」の行に雨天時のアプリ確認を追記
