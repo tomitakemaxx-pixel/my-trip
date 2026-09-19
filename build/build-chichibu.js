@@ -124,7 +124,7 @@ function cover() {
   out.push(table([new TableRow({ children: cards })], { cols: [cw, gap, cw, gap, cw] }));
 
   out.push(spacer(230));
-  out.push(P('作成：髙山浩和　／　2026年9月11日　ver.04', { size: 17, color: C.muted, align: AlignmentType.CENTER, after: 0, line: 250 }));
+  out.push(P('作成：髙山浩和　／　2026年9月19日　ver.05', { size: 17, color: C.muted, align: AlignmentType.CENTER, after: 0, line: 250 }));
   out.push(pageBreak());
   return out;
 }
@@ -220,7 +220,7 @@ function days() {
   const out = [];
   out.push(...chapter('Ⅱ', '1日目：9月21日（月・敬老の日）'));
   out.push(...dayHeader(1, '9月21日', '月・敬老の日', '東京 → 横瀬 → ミューズパーク',
-    '川でマスをつかまえて、ぶどうを食べて、夜はコテージのテラスでBBQ。', 'd1'));
+    '雨の日です。マスを釣って、うどんを打って、夜は屋根付きテラスでBBQ。', 'd1'));
   out.push(...renderDay(D.DAY1, 'd1'));
   out.push(pageBreak());
 
@@ -474,7 +474,7 @@ function build() {
             spacing: { before: 60, after: 0, line: 240 },
             border: { top: { ...line(C.hair, 4), space: 6 } },
             children: [
-              new TextRun({ text: '秩父ファミリー旅行しおり ver.04', font: FONT, size: 15, color: C.muted }),
+              new TextRun({ text: '秩父ファミリー旅行しおり ver.05', font: FONT, size: 15, color: C.muted }),
               new TextRun({ text: '\t', font: FONT, size: 15 }),
               new TextRun({ children: ['− ', PageNumber.CURRENT, ' −'], font: FONT, size: 15, color: C.muted }),
             ],
@@ -486,7 +486,7 @@ function build() {
   });
 
   fs.mkdirSync(OUT, { recursive: true });
-  const name = process.env.SHIORI_OUT || '秩父ファミリー旅行しおり_ver04.docx';
+  const name = process.env.SHIORI_OUT || '秩父ファミリー旅行しおり_ver05.docx';
   return Packer.toBuffer(doc).then((buf) => {
     const p = path.join(OUT, name);
     fs.writeFileSync(p, buf);

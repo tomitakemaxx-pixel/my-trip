@@ -48,7 +48,7 @@ function seatMapHtml(block) {
 
 const DAYS = [
   { n: 1, key: 'd1', date: '9月21日', wd: '月・敬老の日', route: '東京 → 横瀬 → ミューズパーク',
-    lead: '川でマスをつかまえて、ぶどうを食べて、夜はコテージのテラスでBBQ。', blocks: D.DAY1 },
+    lead: '雨の日です。マスを釣って、うどんを打って、夜は屋根付きテラスでBBQ。', blocks: D.DAY1 },
   { n: 2, key: 'd2', date: '9月22日', wd: '火・国民の休日', route: 'ミューズパーク → 西武秩父 → 東京',
     lead: '朝風呂、虫さがし、トランポリン、ピアノの形の展望台。夕方には家に着きます。', blocks: D.DAY2 },
 ];
@@ -528,7 +528,7 @@ ${DAYS.map((d) => `<section id="${d.key}">
 
 <div class="end">
   <p class="l1">それでは、9月21日 7時45分に出発です。</p>
-  <p class="l2">作成：髙山浩和　／　2026年9月11日　ver.04</p>
+  <p class="l2">作成：髙山浩和　／　2026年9月19日　ver.05</p>
 </div>
 
 </main>
